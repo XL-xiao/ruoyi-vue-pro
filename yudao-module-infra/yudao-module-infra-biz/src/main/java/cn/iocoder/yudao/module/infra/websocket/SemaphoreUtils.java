@@ -6,7 +6,6 @@ import java.util.concurrent.Semaphore;
 
 /**
  * 信号量相关处理
- *
  */
 @Slf4j
 public class SemaphoreUtils {

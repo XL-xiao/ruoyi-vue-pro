@@ -56,7 +56,7 @@ public class PermissionServiceImpl implements PermissionService {
      * 角色编号与菜单编号的缓存映射
      * key：角色编号
      * value：菜单编号的数组
-     *
+     * <p>
      * 这里声明 volatile 修饰的原因是，每次刷新时，直接修改指向
      */
     @Getter
@@ -66,7 +66,7 @@ public class PermissionServiceImpl implements PermissionService {
      * 菜单编号与角色编号的缓存映射
      * key：菜单编号
      * value：角色编号的数组
-     *
+     * <p>
      * 这里声明 volatile 修饰的原因是，每次刷新时，直接修改指向
      */
     @Getter
@@ -77,7 +77,7 @@ public class PermissionServiceImpl implements PermissionService {
      * 用户编号与角色编号的缓存映射
      * key：用户编号
      * value：角色编号的数组
-     *
+     * <p>
      * 这里声明 volatile 修饰的原因是，每次刷新时，直接修改指向
      */
     @Getter

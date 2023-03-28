@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @Schema(description = "管理后台 - Banner Response VO")
 @Data
 @ToString(callSuper = true)
-public class BannerRespVO  extends BannerBaseVO {
+public class BannerRespVO extends BannerBaseVO {
 
     @Schema(description = "banner编号", required = true)
     @NotNull(message = "banner编号不能为空")

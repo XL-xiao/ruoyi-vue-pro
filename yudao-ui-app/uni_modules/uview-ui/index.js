@@ -2,7 +2,6 @@
 const pleaseSetTranspileDependencies = {}, babelTest = pleaseSetTranspileDependencies?.test
 
 
-
 // 引入全局mixin
 import mixin from './libs/mixin/mixin.js'
 // 小程序特有的mixin
@@ -36,44 +35,44 @@ import color from './libs/config/color.js'
 import platform from './libs/function/platform'
 
 const $u = {
-    route,
-    date: index.timeFormat, // 另名date
-    colorGradient: colorGradient.colorGradient,
-    hexToRgb: colorGradient.hexToRgb,
-    rgbToHex: colorGradient.rgbToHex,
-    colorToRgba: colorGradient.colorToRgba,
-    test,
-    type: ['primary', 'success', 'error', 'warning', 'info'],
-    http: new Request(),
-    config, // uView配置信息相关，比如版本号
-    zIndex,
-    debounce,
-    throttle,
-    mixin,
-    mpMixin,
-    props,
-    ...index,
-    color,
-    platform
+  route,
+  date: index.timeFormat, // 另名date
+  colorGradient: colorGradient.colorGradient,
+  hexToRgb: colorGradient.hexToRgb,
+  rgbToHex: colorGradient.rgbToHex,
+  colorToRgba: colorGradient.colorToRgba,
+  test,
+  type: ['primary', 'success', 'error', 'warning', 'info'],
+  http: new Request(),
+  config, // uView配置信息相关，比如版本号
+  zIndex,
+  debounce,
+  throttle,
+  mixin,
+  mpMixin,
+  props,
+  ...index,
+  color,
+  platform
 }
 
 // $u挂载到uni对象上
 uni.$u = $u
 
 const install = (Vue) => {
-    // 时间格式化，同时两个名称，date和timeFormat
-    Vue.filter('timeFormat', (timestamp, format) => uni.$u.timeFormat(timestamp, format))
-    Vue.filter('date', (timestamp, format) => uni.$u.timeFormat(timestamp, format))
-    // 将多久以前的方法，注入到全局过滤器
-    Vue.filter('timeFrom', (timestamp, format) => uni.$u.timeFrom(timestamp, format))
-    // 同时挂载到uni和Vue.prototype中
-    // #ifndef APP-NVUE
-    // 只有vue，挂载到Vue.prototype才有意义，因为nvue中全局Vue.prototype和Vue.mixin是无效的
-    Vue.prototype.$u = $u
-    Vue.mixin(mixin)
-    // #endif
+  // 时间格式化，同时两个名称，date和timeFormat
+  Vue.filter('timeFormat', (timestamp, format) => uni.$u.timeFormat(timestamp, format))
+  Vue.filter('date', (timestamp, format) => uni.$u.timeFormat(timestamp, format))
+  // 将多久以前的方法，注入到全局过滤器
+  Vue.filter('timeFrom', (timestamp, format) => uni.$u.timeFrom(timestamp, format))
+  // 同时挂载到uni和Vue.prototype中
+  // #ifndef APP-NVUE
+  // 只有vue，挂载到Vue.prototype才有意义，因为nvue中全局Vue.prototype和Vue.mixin是无效的
+  Vue.prototype.$u = $u
+  Vue.mixin(mixin)
+  // #endif
 }
 
 export default {
-    install
+  install
 }

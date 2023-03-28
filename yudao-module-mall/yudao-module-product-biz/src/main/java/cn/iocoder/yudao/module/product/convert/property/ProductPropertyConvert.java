@@ -42,7 +42,9 @@ public interface ProductPropertyConvert {
             return respVO;
         });
     }
+
     ProductPropertyAndValueRespVO convert02(ProductPropertyDO bean);
+
     List<ProductPropertyAndValueRespVO.Value> convertList02(List<ProductPropertyValueDO> list);
 
 }

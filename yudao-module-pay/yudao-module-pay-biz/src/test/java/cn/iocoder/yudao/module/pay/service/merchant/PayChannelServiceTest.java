@@ -214,7 +214,7 @@ public class PayChannelServiceTest extends BaseDbUnitTest {
             o.setMerchantId(1L);
             o.setAppId(1L);
             o.setConfig(payClientConfig);
-            o.setCreateTime(buildTime(2021,11,20));
+            o.setCreateTime(buildTime(2021, 11, 20));
         });
         channelMapper.insert(dbChannel);
         // 执行拷贝的时候会出现异常，所以在插入后要重置为null 后续在写入新的
@@ -230,7 +230,7 @@ public class PayChannelServiceTest extends BaseDbUnitTest {
             o.setStatus(CommonStatusEnum.DISABLE.getStatus());
         }));
         // 测试 remark 不匹配
-        channelMapper.insert(cloneIgnoreId(dbChannel, o ->{
+        channelMapper.insert(cloneIgnoreId(dbChannel, o -> {
             o.setConfig(payClientConfig);
             o.setRemark("敏敏子的渠道");
         }));
@@ -263,7 +263,7 @@ public class PayChannelServiceTest extends BaseDbUnitTest {
         reqVO.setMerchantId(1L);
         reqVO.setAppId(1L);
         reqVO.setConfig(JSON.toJSONString(payClientConfig));
-        reqVO.setCreateTime((new LocalDateTime[]{buildTime(2021,11,19),buildTime(2021,11,21)}));
+        reqVO.setCreateTime((new LocalDateTime[]{buildTime(2021, 11, 19), buildTime(2021, 11, 21)}));
 
         // 调用
         PageResult<PayChannelDO> pageResult = channelService.getChannelPage(reqVO);
@@ -287,7 +287,7 @@ public class PayChannelServiceTest extends BaseDbUnitTest {
             o.setMerchantId(1L);
             o.setAppId(1L);
             o.setConfig(payClientConfig);
-            o.setCreateTime(buildTime(2021,11,20));
+            o.setCreateTime(buildTime(2021, 11, 20));
         });
         channelMapper.insert(dbChannel);
         // 执行拷贝的时候会出现异常，所以在插入后要重置为null 后续在写入新的
@@ -303,7 +303,7 @@ public class PayChannelServiceTest extends BaseDbUnitTest {
             o.setStatus(CommonStatusEnum.DISABLE.getStatus());
         }));
         // 测试 remark 不匹配
-        channelMapper.insert(cloneIgnoreId(dbChannel, o ->{
+        channelMapper.insert(cloneIgnoreId(dbChannel, o -> {
             o.setConfig(payClientConfig);
             o.setRemark("敏敏子的渠道");
         }));
@@ -336,7 +336,7 @@ public class PayChannelServiceTest extends BaseDbUnitTest {
         reqVO.setMerchantId(1L);
         reqVO.setAppId(1L);
         reqVO.setConfig(JSON.toJSONString(payClientConfig));
-        reqVO.setCreateTime((new LocalDateTime[]{buildTime(2021,11,19),buildTime(2021,11,21)}));
+        reqVO.setCreateTime((new LocalDateTime[]{buildTime(2021, 11, 19), buildTime(2021, 11, 21)}));
 
         // 调用
         List<PayChannelDO> list = channelService.getChannelList(reqVO);

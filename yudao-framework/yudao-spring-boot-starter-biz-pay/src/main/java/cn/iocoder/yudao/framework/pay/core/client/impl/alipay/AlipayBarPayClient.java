@@ -18,7 +18,7 @@ import static cn.iocoder.yudao.framework.common.exception.util.ServiceExceptionU
 
 /**
  * 支付宝【条码支付】的 PayClient 实现类
- *
+ * <p>
  * 文档：<a href="https://opendocs.alipay.com/open/194/105072">当面付</a>
  *
  * @author 芋道源码

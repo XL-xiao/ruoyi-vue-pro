@@ -106,7 +106,7 @@ public class PayMerchantController {
     @PreAuthorize("@ss.hasPermission('pay:merchant:export')")
     @OperateLog(type = EXPORT)
     public void exportMerchantExcel(@Valid PayMerchantExportReqVO exportReqVO,
-              HttpServletResponse response) throws IOException {
+                                    HttpServletResponse response) throws IOException {
         List<PayMerchantDO> list = merchantService.getMerchantList(exportReqVO);
         // 导出 Excel
         List<PayMerchantExcelVO> datas = PayMerchantConvert.INSTANCE.convertList02(list);

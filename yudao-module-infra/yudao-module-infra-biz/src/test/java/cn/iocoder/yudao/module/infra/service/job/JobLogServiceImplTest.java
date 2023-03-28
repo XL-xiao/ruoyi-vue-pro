@@ -116,7 +116,8 @@ public class JobLogServiceImplTest extends BaseDbUnitTest {
         JobLogDO dbJobLog = randomPojo(JobLogDO.class, o -> o.setExecuteIndex(1));
         jobLogMapper.insert(dbJobLog);
         // 测试 handlerName 不匹配
-        jobLogMapper.insert(cloneIgnoreId(dbJobLog, o -> {}));
+        jobLogMapper.insert(cloneIgnoreId(dbJobLog, o -> {
+        }));
         // 准备参数
         Collection<Long> ids = singleton(dbJobLog.getId());
 

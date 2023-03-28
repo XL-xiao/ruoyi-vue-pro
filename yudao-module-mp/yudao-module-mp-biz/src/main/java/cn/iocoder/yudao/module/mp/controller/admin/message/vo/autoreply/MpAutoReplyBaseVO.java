@@ -58,7 +58,7 @@ public class MpAutoReplyBaseVO {
     @Schema(description = "缩略图的媒体 id", example = "123456")
     @NotEmpty(message = "回复的消息 thumbMediaId 不能为空", groups = {MusicMessageGroup.class})
     private String responseThumbMediaId;
-    @Schema(description = "缩略图的媒体 URL",example = "https://www.iocoder.cn/xxx.jpg")
+    @Schema(description = "缩略图的媒体 URL", example = "https://www.iocoder.cn/xxx.jpg")
     @NotEmpty(message = "回复的消息 thumbMedia 地址不能为空", groups = {MusicMessageGroup.class})
     private String responseThumbMediaUrl;
 
@@ -71,7 +71,7 @@ public class MpAutoReplyBaseVO {
 
     /**
      * 回复的图文消息
-     *
+     * <p>
      * 消息类型为 {@link WxConsts.XmlMsgType} 的 NEWS
      */
     @NotNull(message = "回复的图文消息不能为空", groups = {NewsMessageGroup.class, ViewLimitedButtonGroup.class})

@@ -11,7 +11,7 @@ import java.util.Date;
 
 /**
  * 示例订单
- *
+ * <p>
  * 演示业务系统的订单，如何接入 pay 系统的支付与退款
  *
  * @author 芋道源码
@@ -56,7 +56,7 @@ public class PayDemoOrderDO extends BaseDO {
     private Boolean payed;
     /**
      * 支付订单编号
-     *
+     * <p>
      * 对接 pay-module-biz 支付服务的支付订单编号，即 PayOrderDO 的 id 编号
      */
     private Long payOrderId;
@@ -66,7 +66,7 @@ public class PayDemoOrderDO extends BaseDO {
     private LocalDateTime payTime;
     /**
      * 支付渠道
-     *
+     * <p>
      * 对应 PayChannelEnum 枚举
      */
     private String payChannelCode;

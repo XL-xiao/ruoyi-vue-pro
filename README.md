@@ -23,7 +23,8 @@
 
 ![架构图](https://static.iocoder.cn/ruoyi-vue-pro-architecture.png?imageView2/2/format/webp)
 
-* 管理后台的 Vue3 版本采用 [vue-element-plus-admin](https://gitee.com/kailong110120130/vue-element-plus-admin) ，Vue2 版本采用 [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin) 
+* 管理后台的 Vue3 版本采用 [vue-element-plus-admin](https://gitee.com/kailong110120130/vue-element-plus-admin) ，Vue2
+  版本采用 [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin)
 * 管理后台的移动端采用 [uni-app](https://github.com/dcloudio/uni-app) 方案，一份代码多终端适配，同时支持 APP、小程序、H5！
 * 后端采用 Spring Boot 多模块架构、MySQL + MyBatis Plus、Redis + Redisson
 * 数据库可使用 MySQL、Oracle、PostgreSQL、SQL Server、MariaDB、国产达梦 DM、TiDB 等
@@ -36,14 +37,13 @@
 * 集成阿里云、腾讯云等短信渠道，集成 MinIO、阿里云、腾讯云、七牛云等云存储服务
 * 集成报表设计器、大屏设计器，通过拖拽即可生成酷炫的报表与大屏
 
-##  🐳 项目关系
+## 🐳 项目关系
 
 ![架构演进](https://static.iocoder.cn/yudao-roadmap.png?imageView2/2/format/webp)
 
 三个项目的功能对比，可见社区共同整理的 [国产开源项目对比](https://www.yuque.com/xiatian-bsgny/lm0ec1/wqf8mn) 表格。
 
 ### 后端项目
-
 
 | 项目                                                              | Star                                                                                                                                                                                                                                                                                             | 简介                          |
 |-----------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------|
@@ -79,7 +79,8 @@
 
 **为什么推荐使用本项目？**
 
-① 本项目采用比 Apache 2.0 更宽松的 [MIT License](https://gitee.com/zhijiantianya/ruoyi-vue-pro/blob/master/LICENSE) 开源协议，个人与企业可 100% 免费使用，不用保留类作者、Copyright 信息。
+① 本项目采用比 Apache 2.0 更宽松的 [MIT License](https://gitee.com/zhijiantianya/ruoyi-vue-pro/blob/master/LICENSE) 开源协议，个人与企业可
+100% 免费使用，不用保留类作者、Copyright 信息。
 
 ② 代码全部开源，不会像其他项目一样，只开源部分代码，让你无法了解整个项目的架构设计。[国产开源项目对比](https://www.yuque.com/xiatian-bsgny/lm0ec1/wqf8mn)
 

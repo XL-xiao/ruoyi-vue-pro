@@ -12,7 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 
 /**
  * 支付宝【扫码支付】的 PayClient 实现类
- *
+ * <p>
  * 文档：<a href="https://opendocs.alipay.com/apis/02890k">扫码支付</a>
  *
  * @author 芋道源码

@@ -80,7 +80,7 @@ public class TradeAfterSaleServiceImpl implements TradeAfterSaleService {
     /**
      * 校验交易订单项是否可以申请售后
      *
-     * @param userId 用户编号
+     * @param userId      用户编号
      * @param createReqVO 售后创建信息
      * @return 交易订单项
      */
@@ -117,7 +117,7 @@ public class TradeAfterSaleServiceImpl implements TradeAfterSaleService {
         }
         // 如果是【退货退款】的情况，需要额外校验是否发货
         if (createReqVO.getWay().equals(TradeAfterSaleWayEnum.RETURN_AND_REFUND.getWay())
-            && !TradeOrderStatusEnum.haveDelivered(order.getStatus())) {
+                && !TradeOrderStatusEnum.haveDelivered(order.getStatus())) {
             throw exception(AFTER_SALE_CREATE_FAIL_ORDER_STATUS_NO_DELIVERED);
         }
         return orderItem;
@@ -133,7 +133,7 @@ public class TradeAfterSaleServiceImpl implements TradeAfterSaleService {
         TradeOrderDO order = tradeOrderService.getOrder(orderItem.getUserId(), orderItem.getOrderId());
         afterSale.setOrderNo(order.getNo()); // 记录 orderNo 订单流水，方便后续检索
         afterSale.setType(TradeOrderStatusEnum.isCompleted(order.getStatus())
-            ? TradeAfterSaleTypeEnum.AFTER_SALE.getType() : TradeAfterSaleTypeEnum.IN_SALE.getType());
+                ? TradeAfterSaleTypeEnum.AFTER_SALE.getType() : TradeAfterSaleTypeEnum.IN_SALE.getType());
         // TODO 退还积分
         tradeAfterSaleMapper.insert(afterSale);
 

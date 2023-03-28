@@ -213,7 +213,7 @@ public class BpmProcessDefinitionServiceImpl implements BpmProcessDefinitionServ
      * @param bpmnBytes 原始的 BPMN XML 字节数组
      * @return BPMN Model
      */
-    private  BpmnModel buildBpmnModel(byte[] bpmnBytes) {
+    private BpmnModel buildBpmnModel(byte[] bpmnBytes) {
         // 转换成 BpmnModel 对象
         BpmnXMLConverter converter = new BpmnXMLConverter();
         return converter.convertToBpmnModel(new BytesStreamSource(bpmnBytes), true, true);

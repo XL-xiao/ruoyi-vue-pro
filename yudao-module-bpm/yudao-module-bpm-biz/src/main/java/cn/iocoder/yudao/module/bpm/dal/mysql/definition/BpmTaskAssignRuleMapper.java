@@ -33,5 +33,4 @@ public interface BpmTaskAssignRuleMapper extends BaseMapperX<BpmTaskAssignRuleDO
     }
 
 
-
 }

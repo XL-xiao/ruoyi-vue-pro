@@ -9,7 +9,7 @@ import java.util.List;
 
 @Schema(description = "管理后台 - 公众号粉丝 Response VO")
 @Data
-public class MpUserRespVO  {
+public class MpUserRespVO {
 
     @Schema(description = "编号", required = true, example = "1024")
     private Long id;

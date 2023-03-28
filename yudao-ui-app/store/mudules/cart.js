@@ -1,4 +1,4 @@
-import { getCartDetail } from '@/api/cart'
+import {getCartDetail} from '@/api/cart'
 
 const cart = {
   state: {
@@ -13,7 +13,7 @@ const cart = {
   },
   actions: {
     //获取购物车数据
-    CartProductDetail({ state, commit }) {
+    CartProductDetail({state, commit}) {
       return getCartDetail()
         .then(res => {
           commit('SET_CART_COUNT', res.data)

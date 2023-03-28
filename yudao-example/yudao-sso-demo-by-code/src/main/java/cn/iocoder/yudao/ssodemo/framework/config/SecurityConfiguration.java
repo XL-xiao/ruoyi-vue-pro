@@ -15,7 +15,7 @@ import javax.annotation.Resource;
 
 @Configuration(proxyBeanMethods = false)
 @EnableWebSecurity
-public class SecurityConfiguration{
+public class SecurityConfiguration {
 
     @Resource
     private TokenAuthenticationFilter tokenAuthenticationFilter;

@@ -96,16 +96,16 @@ public class MpAutoReplyServiceImpl implements MpAutoReplyService {
 
     /**
      * 校验自动回复是否冲突
-     *
+     * <p>
      * 不同的 type，会有不同的逻辑：
      * 1. type = SUBSCRIBE 时，不允许有其他的自动回复
      * 2. type = MESSAGE 时，校验 requestMessageType 已经存在自动回复
      * 3. type = KEYWORD 时，校验 keyword 已经存在自动回复
      *
-     * @param id 自动回复编号
-     * @param accountId 公众号账号的编号
-     * @param type 类型
-     * @param requestKeyword 请求关键词
+     * @param id                 自动回复编号
+     * @param accountId          公众号账号的编号
+     * @param type               类型
+     * @param requestKeyword     请求关键词
      * @param requestMessageType 请求消息类型
      */
     private void validateAutoReplyConflict(Long id, Long accountId, Integer type,
@@ -129,7 +129,7 @@ public class MpAutoReplyServiceImpl implements MpAutoReplyService {
 
         // 存在冲突，抛出业务异常
         if (id == null // 情况一，新增（id == null），存在记录，说明冲突
-            || ObjUtil.notEqual(id, autoReply.getId())) { // 情况二，修改（id != null），id 不匹配，说明冲突
+                || ObjUtil.notEqual(id, autoReply.getId())) { // 情况二，修改（id != null），id 不匹配，说明冲突
             throw exception(errorCode);
         }
     }

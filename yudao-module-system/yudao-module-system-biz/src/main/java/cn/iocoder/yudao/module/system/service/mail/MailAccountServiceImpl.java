@@ -45,7 +45,7 @@ public class MailAccountServiceImpl implements MailAccountService {
     /**
      * 邮箱账号缓存
      * key：邮箱账号编码 {@link MailAccountDO#getId()}
-     *
+     * <p>
      * 这里声明 volatile 修饰的原因是，每次刷新时，直接修改指向
      */
     @Getter

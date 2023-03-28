@@ -13,6 +13,7 @@ public class YudaoWebSocketHandlerDecorator extends WebSocketHandlerDecorator {
 
     /**
      * websocket 连接时执行的动作
+     *
      * @param session websocket session 对象
      * @throws Exception 异常对象
      */
@@ -24,7 +25,8 @@ public class YudaoWebSocketHandlerDecorator extends WebSocketHandlerDecorator {
 
     /**
      * websocket 关闭连接时执行的动作
-     * @param session websocket session 对象
+     *
+     * @param session     websocket session 对象
      * @param closeStatus 关闭状态对象
      * @throws Exception 异常对象
      */

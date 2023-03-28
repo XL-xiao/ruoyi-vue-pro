@@ -45,7 +45,7 @@ public class MpAccountServiceImpl implements MpAccountService {
     /**
      * 账号缓存
      * key：账号编号 {@link MpAccountDO#getAppId()}
-     *
+     * <p>
      * 这里声明 volatile 修饰的原因是，每次刷新时，直接修改指向
      */
     @Getter

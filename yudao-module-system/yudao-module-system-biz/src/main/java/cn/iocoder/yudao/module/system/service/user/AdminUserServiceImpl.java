@@ -283,6 +283,7 @@ public class AdminUserServiceImpl implements AdminUserService {
 
     /**
      * 获得部门条件：查询指定部门的子部门编号们，包括自身
+     *
      * @param deptId 部门编号
      * @return 部门编号集合
      */
@@ -297,7 +298,7 @@ public class AdminUserServiceImpl implements AdminUserService {
     }
 
     private void validateUserForCreateOrUpdate(Long id, String username, String mobile, String email,
-                                              Long deptId, Set<Long> postIds) {
+                                               Long deptId, Set<Long> postIds) {
         // 关闭数据权限，避免因为没有数据权限，查询不到数据，进而导致唯一校验不正确
         DataPermissionUtils.executeIgnore(() -> {
             // 校验用户存在
@@ -382,6 +383,7 @@ public class AdminUserServiceImpl implements AdminUserService {
 
     /**
      * 校验旧密码
+     *
      * @param id          用户 id
      * @param oldPassword 旧密码
      */

@@ -164,7 +164,7 @@ public class ApiErrorLogServiceImplTest extends BaseDbUnitTest {
 
         // 调用，并断言异常
         assertServiceException(() ->
-                apiErrorLogService.updateApiErrorLogProcess(id, processStatus, processUserId),
+                        apiErrorLogService.updateApiErrorLogProcess(id, processStatus, processUserId),
                 API_ERROR_LOG_PROCESSED);
     }
 
@@ -177,7 +177,7 @@ public class ApiErrorLogServiceImplTest extends BaseDbUnitTest {
 
         // 调用，并断言异常
         assertServiceException(() ->
-                apiErrorLogService.updateApiErrorLogProcess(id, processStatus, processUserId),
+                        apiErrorLogService.updateApiErrorLogProcess(id, processStatus, processUserId),
                 API_ERROR_LOG_NOT_FOUND);
     }
 

@@ -15,7 +15,7 @@ import org.springframework.web.client.RestTemplate;
 
 /**
  * 用户 User 信息的客户端
- *
+ * <p>
  * 对应调用 OAuth2UserController 接口
  */
 @Component
@@ -40,7 +40,8 @@ public class UserClient {
                 BASE_URL + "/get",
                 HttpMethod.GET,
                 new HttpEntity<>(body, headers),
-                new ParameterizedTypeReference<CommonResult<UserInfoRespDTO>>() {}); // 解决 CommonResult 的泛型丢失
+                new ParameterizedTypeReference<CommonResult<UserInfoRespDTO>>() {
+                }); // 解决 CommonResult 的泛型丢失
         Assert.isTrue(exchange.getStatusCode().is2xxSuccessful(), "响应必须是 200 成功");
         return exchange.getBody();
     }
@@ -59,7 +60,8 @@ public class UserClient {
                 BASE_URL + "/update",
                 HttpMethod.PUT,
                 new HttpEntity<>(updateReqDTO, headers),
-                new ParameterizedTypeReference<CommonResult<Boolean>>() {}); // 解决 CommonResult 的泛型丢失
+                new ParameterizedTypeReference<CommonResult<Boolean>>() {
+                }); // 解决 CommonResult 的泛型丢失
         Assert.isTrue(exchange.getStatusCode().is2xxSuccessful(), "响应必须是 200 成功");
         return exchange.getBody();
     }

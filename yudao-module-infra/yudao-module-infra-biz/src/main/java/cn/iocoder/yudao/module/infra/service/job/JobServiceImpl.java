@@ -156,12 +156,12 @@ public class JobServiceImpl implements JobService {
 
     @Override
     public PageResult<JobDO> getJobPage(JobPageReqVO pageReqVO) {
-		return jobMapper.selectPage(pageReqVO);
+        return jobMapper.selectPage(pageReqVO);
     }
 
     @Override
     public List<JobDO> getJobList(JobExportReqVO exportReqVO) {
-		return jobMapper.selectList(exportReqVO);
+        return jobMapper.selectList(exportReqVO);
     }
 
     private static void fillJobMonitorTimeoutEmpty(JobDO job) {

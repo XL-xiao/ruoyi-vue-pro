@@ -7,7 +7,8 @@ import cn.iocoder.yudao.framework.pay.core.client.dto.order.PayOrderUnifiedReqDT
 import cn.iocoder.yudao.framework.pay.core.client.dto.order.PayOrderUnifiedRespDTO;
 import cn.iocoder.yudao.framework.pay.core.client.dto.refund.PayRefundUnifiedReqDTO;
 import cn.iocoder.yudao.framework.pay.core.client.dto.refund.PayRefundUnifiedRespDTO;
-import com.alipay.api.AlipayResponse;import lombok.extern.slf4j.Slf4j;
+import com.alipay.api.AlipayResponse;
+import lombok.extern.slf4j.Slf4j;
 
 import javax.validation.Validation;
 import java.time.LocalDateTime;
@@ -98,7 +99,7 @@ public abstract class AbstractPayClient<Config extends PayClientConfig> implemen
         PayRefundUnifiedRespDTO resp;
         try {
             resp = doUnifiedRefund(reqDTO);
-        }  catch (Throwable ex) {
+        } catch (Throwable ex) {
             // 记录异常日志
             log.error("[unifiedRefund][request({}) 发起退款失败]", toJsonString(reqDTO), ex);
             throw buildException(ex);

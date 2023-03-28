@@ -48,7 +48,7 @@ public class RoleServiceImpl implements RoleService {
     /**
      * 角色缓存
      * key：角色编号 {@link RoleDO#getId()}
-     *
+     * <p>
      * 这里声明 volatile 修饰的原因是，每次刷新时，直接修改指向
      */
     @Getter
@@ -171,8 +171,8 @@ public class RoleServiceImpl implements RoleService {
     @Override
     public List<RoleDO> getRoleListByStatus(@Nullable Collection<Integer> statuses) {
         if (CollUtil.isEmpty(statuses)) {
-    		return roleMapper.selectList();
-		}
+            return roleMapper.selectList();
+        }
         return roleMapper.selectListByStatus(statuses);
     }
 
@@ -210,13 +210,13 @@ public class RoleServiceImpl implements RoleService {
 
     /**
      * 校验角色的唯一字段是否重复
-     *
+     * <p>
      * 1. 是否存在相同名字的角色
      * 2. 是否存在相同编码的角色
      *
      * @param name 角色名字
      * @param code 角色额编码
-     * @param id 角色编号
+     * @param id   角色编号
      */
     @VisibleForTesting
     void validateRoleDuplicate(String name, String code, Long id) {

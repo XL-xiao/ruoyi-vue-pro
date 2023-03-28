@@ -42,11 +42,11 @@ public class MailProducer {
      * 发送 {@link MailSendMessage} 消息
      *
      * @param sendLogId 发送日志编码
-     * @param mail 接收邮件地址
+     * @param mail      接收邮件地址
      * @param accountId 邮件账号编号
-     * @param nickname 邮件发件人
-     * @param title 邮件标题
-     * @param content 邮件内容
+     * @param nickname  邮件发件人
+     * @param title     邮件标题
+     * @param content   邮件内容
      */
     public void sendMailSendMessage(Long sendLogId, String mail, Long accountId,
                                     String nickname, String title, String content) {

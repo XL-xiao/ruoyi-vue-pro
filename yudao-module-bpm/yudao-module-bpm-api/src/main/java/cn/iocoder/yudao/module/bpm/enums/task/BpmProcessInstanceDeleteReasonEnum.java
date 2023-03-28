@@ -50,8 +50,10 @@ public enum BpmProcessInstanceDeleteReasonEnum {
             return reason;
         }
         switch (reason) {
-            case "MI_END": return MULTI_TASK_END.getReason();
-            default: return reason;
+            case "MI_END":
+                return MULTI_TASK_END.getReason();
+            default:
+                return reason;
         }
     }
 

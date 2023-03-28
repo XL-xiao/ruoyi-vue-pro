@@ -88,7 +88,7 @@ function filterAsyncRouter(asyncRouterMap, lastRouter = false, type = false) {
     }
     if (route.children != null && route.children && route.children.length) {
       route.children = filterAsyncRouter(route.children, route, type)
-      route.alwaysShow = route.alwaysShow !== undefined ? route.alwaysShow  : true
+      route.alwaysShow = route.alwaysShow !== undefined ? route.alwaysShow : true
     } else {
       delete route['children']
       delete route['alwaysShow'] // 如果没有子菜单，就不需要考虑 alwaysShow 字段

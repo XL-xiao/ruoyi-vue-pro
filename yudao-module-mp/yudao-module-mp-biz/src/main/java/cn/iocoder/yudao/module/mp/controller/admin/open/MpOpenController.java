@@ -38,7 +38,7 @@ public class MpOpenController {
 
     /**
      * 接收微信公众号的校验签名
-     *
+     * <p>
      * 对应 <a href="https://developers.weixin.qq.com/doc/offiaccount/Basic_Information/Access_Overview.html">文档</a>
      */
     @Operation(summary = "校验签名") // 参见

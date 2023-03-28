@@ -51,7 +51,7 @@ public class WXLitePayClient extends AbstractPayClient<WXPayClientConfig> {
     @Override
     protected void doInit() {
         WxPayConfig payConfig = new WxPayConfig();
-        BeanUtil.copyProperties(config, payConfig, "privateKeyContent","privateCertContent");
+        BeanUtil.copyProperties(config, payConfig, "privateKeyContent", "privateCertContent");
         payConfig.setTradeType(WxPayConstants.TradeType.JSAPI); // 设置使用 JS API 支付方式
 //        if (StrUtil.isNotEmpty(config.getKeyContent())) {
 //            payConfig.setKeyContent(config.getKeyContent().getBytes(StandardCharsets.UTF_8));
@@ -138,7 +138,6 @@ public class WXLitePayClient extends AbstractPayClient<WXPayClientConfig> {
     }
 
     /**
-     *
      * 微信支付回调 分 v2 和v3 的处理方式
      *
      * @param data 通知结果
@@ -190,7 +189,7 @@ public class WXLitePayClient extends AbstractPayClient<WXPayClientConfig> {
     }
 
     @Override
-    protected PayRefundUnifiedRespDTO doUnifiedRefund(PayRefundUnifiedReqDTO reqDTO)  {
+    protected PayRefundUnifiedRespDTO doUnifiedRefund(PayRefundUnifiedReqDTO reqDTO) {
         //TODO 需要实现
         throw new UnsupportedOperationException();
     }

@@ -10,7 +10,7 @@ export function decodeFields(fields, variables) {
   const drawingList = (fields || []).map(json => {
     const item = JSON.parse(json)
 
-    if (typeof variables === 'undefined' ) return item
+    if (typeof variables === 'undefined') return item
 
     const setDefault = (item, variables) => {
       if (typeof variables[item.__vModel__] !== 'undefined') {

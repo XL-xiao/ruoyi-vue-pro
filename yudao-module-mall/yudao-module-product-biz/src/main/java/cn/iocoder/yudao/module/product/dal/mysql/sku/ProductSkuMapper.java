@@ -41,7 +41,7 @@ public interface ProductSkuMapper extends BaseMapperX<ProductSkuDO> {
     /**
      * 更新 SKU 库存（增加）
      *
-     * @param id 编号
+     * @param id        编号
      * @param incrCount 增加库存（正数）
      */
     default void updateStockIncr(Long id, Integer incrCount) {
@@ -55,7 +55,7 @@ public interface ProductSkuMapper extends BaseMapperX<ProductSkuDO> {
     /**
      * 更新 SKU 库存（减少）
      *
-     * @param id 编号
+     * @param id        编号
      * @param incrCount 减少库存（负数）
      * @return 更新条数
      */
@@ -68,8 +68,8 @@ public interface ProductSkuMapper extends BaseMapperX<ProductSkuDO> {
         return update(null, updateWrapper);
     }
 
-    default List<ProductSkuDO> selectListByAlarmStock(){
-       return selectList(new QueryWrapper<ProductSkuDO>().apply("stock <= warn_stock"));
+    default List<ProductSkuDO> selectListByAlarmStock() {
+        return selectList(new QueryWrapper<ProductSkuDO>().apply("stock <= warn_stock"));
     }
 
 }

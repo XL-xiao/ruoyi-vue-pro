@@ -97,7 +97,7 @@ public interface PayMerchantService {
      * @return 商户 Map
      */
     default Map<Long, PayMerchantDO> getMerchantMap(Collection<Long> merchantIds) {
-        List<PayMerchantDO> list =  this.getMerchantList(merchantIds);
+        List<PayMerchantDO> list = this.getMerchantList(merchantIds);
         return CollectionUtils.convertMap(list, PayMerchantDO::getId);
     }
 

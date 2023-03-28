@@ -26,8 +26,8 @@ public interface TradeOrderService {
     /**
      * 【会员】创建交易订单
      *
-     * @param userId 登录用户
-     * @param userIp 用户 IP 地址
+     * @param userId      登录用户
+     * @param userIp      用户 IP 地址
      * @param createReqVO 创建交易订单请求模型
      * @return 交易订单的编号
      */
@@ -36,7 +36,7 @@ public interface TradeOrderService {
     /**
      * 更新交易订单已支付
      *
-     * @param id 交易订单编号
+     * @param id         交易订单编号
      * @param payOrderId 支付订单编号
      */
     void updateOrderPaid(Long id, Long payOrderId);
@@ -44,7 +44,7 @@ public interface TradeOrderService {
     /**
      * 【管理员】发货交易订单
      *
-     * @param userId 管理员编号
+     * @param userId        管理员编号
      * @param deliveryReqVO 发货请求
      */
     void deliveryOrder(Long userId, TradeOrderDeliveryReqVO deliveryReqVO);
@@ -53,7 +53,7 @@ public interface TradeOrderService {
      * 【会员】收货交易订单
      *
      * @param userId 用户编号
-     * @param id 订单编号
+     * @param id     订单编号
      */
     void receiveOrder(Long userId, Long id);
 
@@ -69,7 +69,7 @@ public interface TradeOrderService {
      * 获得指定用户，指定的交易订单
      *
      * @param userId 用户编号
-     * @param id 交易订单编号
+     * @param id     交易订单编号
      * @return 交易订单
      */
     TradeOrderDO getOrder(Long userId, Long id);
@@ -86,7 +86,7 @@ public interface TradeOrderService {
      * 【会员】获得交易订单分页
      *
      * @param userId 用户编号
-     * @param reqVO 分页请求
+     * @param reqVO  分页请求
      * @return 交易订单
      */
     PageResult<TradeOrderDO> getOrderPage(Long userId, AppTradeOrderPageReqVO reqVO);
@@ -105,10 +105,10 @@ public interface TradeOrderService {
     /**
      * 更新交易订单项的售后状态
      *
-     * @param id 交易订单项编号
+     * @param id                 交易订单项编号
      * @param oldAfterSaleStatus 当前售后状态；如果不符，更新后会抛出异常
      * @param newAfterSaleStatus 目标售后状态
-     * @param refundPrice 退款金额；当订单项退款成功时，必须传递该值
+     * @param refundPrice        退款金额；当订单项退款成功时，必须传递该值
      */
     void updateOrderItemAfterSaleStatus(Long id, Integer oldAfterSaleStatus,
                                         Integer newAfterSaleStatus, Integer refundPrice);

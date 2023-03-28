@@ -18,13 +18,13 @@ public interface PayChannelConvert {
 
     PayChannelConvert INSTANCE = Mappers.getMapper(PayChannelConvert.class);
 
-    @Mapping(target = "config",ignore = true)
+    @Mapping(target = "config", ignore = true)
     PayChannelDO convert(PayChannelCreateReqVO bean);
 
-    @Mapping(target = "config",ignore = true)
+    @Mapping(target = "config", ignore = true)
     PayChannelDO convert(PayChannelUpdateReqVO bean);
 
-    @Mapping(target = "config",expression = "java(cn.iocoder.yudao.framework.common.util.json.JsonUtils.toJsonString(bean.getConfig()))")
+    @Mapping(target = "config", expression = "java(cn.iocoder.yudao.framework.common.util.json.JsonUtils.toJsonString(bean.getConfig()))")
     PayChannelRespVO convert(PayChannelDO bean);
 
     List<PayChannelRespVO> convertList(List<PayChannelDO> list);
@@ -32,7 +32,6 @@ public interface PayChannelConvert {
     PageResult<PayChannelRespVO> convertPage(PageResult<PayChannelDO> page);
 
     List<PayChannelExcelVO> convertList02(List<PayChannelDO> list);
-
 
 
 }

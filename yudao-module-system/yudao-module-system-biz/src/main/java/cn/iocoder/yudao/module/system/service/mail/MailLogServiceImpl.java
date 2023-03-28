@@ -47,7 +47,7 @@ public class MailLogServiceImpl implements MailLogService {
         MailLogDO.MailLogDOBuilder logDOBuilder = MailLogDO.builder();
         // 根据是否要发送，设置状态
         logDOBuilder.sendStatus(Objects.equals(isSend, true) ? MailSendStatusEnum.INIT.getStatus()
-                : MailSendStatusEnum.IGNORE.getStatus())
+                        : MailSendStatusEnum.IGNORE.getStatus())
                 // 用户信息
                 .userId(userId).userType(userType).toMail(toMail)
                 .accountId(account.getId()).fromMail(account.getMail())

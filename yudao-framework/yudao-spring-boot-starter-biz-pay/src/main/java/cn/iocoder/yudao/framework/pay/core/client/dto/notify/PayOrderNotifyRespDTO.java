@@ -37,7 +37,7 @@ public class PayOrderNotifyRespDTO {
 
     /**
      * TODO @jason 结合其他的渠道定义成枚举,
-     *
+     * <p>
      * alipay
      * TRADE_CLOSED,未付款交易超时关闭，或支付完成后全额退款。
      * TRADE_SUCCESS, 交易支付成功

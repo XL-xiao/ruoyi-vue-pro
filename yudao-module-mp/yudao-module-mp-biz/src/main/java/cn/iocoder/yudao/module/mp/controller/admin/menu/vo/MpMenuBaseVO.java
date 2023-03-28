@@ -26,7 +26,7 @@ public class MpMenuBaseVO {
     private String name;
     /**
      * 菜单标识
-     *
+     * <p>
      * 支持多 DB 类型时，无法直接使用 key + @TableField("menuKey") 来实现转换，原因是 "menuKey" AS key 而存在报错
      */
     private String menuKey;
@@ -39,7 +39,7 @@ public class MpMenuBaseVO {
 
     /**
      * 按钮类型
-     *
+     * <p>
      * 枚举 {@link WxConsts.MenuButtonType}
      */
     private String type;
@@ -57,7 +57,7 @@ public class MpMenuBaseVO {
     @NotEmpty(message = "小程序的页面路径不能为空", groups = MiniProgramButtonGroup.class)
     private String miniProgramPagePath;
 
-    @Schema(description ="跳转图文的媒体编号", example = "jCQk93AIIgp8ixClWcW_NXXqBKInNWNmq2XnPeDZl7IMVqWiNeL4FfELtggRXd83")
+    @Schema(description = "跳转图文的媒体编号", example = "jCQk93AIIgp8ixClWcW_NXXqBKInNWNmq2XnPeDZl7IMVqWiNeL4FfELtggRXd83")
     @NotEmpty(message = "跳转图文的媒体编号不能为空", groups = ViewLimitedButtonGroup.class)
     private String articleId;
 
@@ -83,7 +83,7 @@ public class MpMenuBaseVO {
     @Schema(description = "缩略图的媒体 id", example = "123456")
     @NotEmpty(message = "回复的消息 thumbMediaId 不能为空", groups = {MusicMessageGroup.class})
     private String replyThumbMediaId;
-    @Schema(description = "缩略图的媒体 URL",example = "https://www.iocoder.cn/xxx.jpg")
+    @Schema(description = "缩略图的媒体 URL", example = "https://www.iocoder.cn/xxx.jpg")
     @NotEmpty(message = "回复的消息 thumbMedia 地址不能为空", groups = {MusicMessageGroup.class})
     private String replyThumbMediaUrl;
 
@@ -96,7 +96,7 @@ public class MpMenuBaseVO {
 
     /**
      * 回复的图文消息数组
-     *
+     * <p>
      * 消息类型为 {@link WxConsts.XmlMsgType} 的 NEWS
      */
     @NotNull(message = "回复的图文消息不能为空", groups = {NewsMessageGroup.class, ViewLimitedButtonGroup.class})

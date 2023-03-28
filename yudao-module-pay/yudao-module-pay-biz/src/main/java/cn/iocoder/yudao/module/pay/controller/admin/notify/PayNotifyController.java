@@ -60,8 +60,8 @@ public class PayNotifyController {
      * 统一的渠道支付回调，支付宝的退款回调
      *
      * @param channelId 渠道编号
-     * @param params form 参数
-     * @param body request body
+     * @param params    form 参数
+     * @param body      request body
      * @return 成功返回 "success"
      */
     @PostMapping(value = "/callback/{channelId}")

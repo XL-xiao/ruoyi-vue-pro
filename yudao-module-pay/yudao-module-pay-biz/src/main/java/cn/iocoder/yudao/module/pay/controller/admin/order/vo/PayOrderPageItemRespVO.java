@@ -23,7 +23,7 @@ public class PayOrderPageItemRespVO extends PayOrderBaseVO {
     private String merchantName;
 
     @Schema(description = "应用名称")
-    private String  appName;
+    private String appName;
 
     @Schema(description = "渠道名称")
     private String channelCodeName;

@@ -25,7 +25,7 @@ public class AppUserUpdateMobileReqVO {
     @Pattern(regexp = "^[0-9]+$", message = "手机验证码必须都是数字")
     private String code;
 
-    @Schema(description = "手机号",required = true,example = "15823654487")
+    @Schema(description = "手机号", required = true, example = "15823654487")
     @NotBlank(message = "手机号不能为空")
     @Length(min = 8, max = 11, message = "手机号码长度为 8-11 位")
     @Mobile
@@ -39,7 +39,7 @@ public class AppUserUpdateMobileReqVO {
 
     // TODO @芋艿：oldMobile 应该不用传递
 
-    @Schema(description = "原手机号",required = true,example = "15823654487")
+    @Schema(description = "原手机号", required = true, example = "15823654487")
     @NotBlank(message = "手机号不能为空")
     @Length(min = 8, max = 11, message = "手机号码长度为 8-11 位")
     @Mobile

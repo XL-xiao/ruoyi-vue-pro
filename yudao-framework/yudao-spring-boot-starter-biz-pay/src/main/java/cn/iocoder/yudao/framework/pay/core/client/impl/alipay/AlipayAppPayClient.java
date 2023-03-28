@@ -12,9 +12,9 @@ import lombok.extern.slf4j.Slf4j;
 
 /**
  * 支付宝【App 支付】的 PayClient 实现类
- *
+ * <p>
  * 文档：<a href="https://opendocs.alipay.com/open/02e7gq">App 支付</a>
- *
+ * <p>
  * // TODO 芋艿：未详细测试，因为手头没 App
  *
  * @author 芋道源码

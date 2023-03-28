@@ -32,14 +32,14 @@ public class MailTemplateController {
     @PostMapping("/create")
     @Operation(summary = "创建邮件模版")
     @PreAuthorize("@ss.hasPermission('system:mail-template:create')")
-    public CommonResult<Long> createMailTemplate(@Valid @RequestBody MailTemplateCreateReqVO createReqVO){
+    public CommonResult<Long> createMailTemplate(@Valid @RequestBody MailTemplateCreateReqVO createReqVO) {
         return success(mailTempleService.createMailTemplate(createReqVO));
     }
 
     @PutMapping("/update")
     @Operation(summary = "修改邮件模版")
     @PreAuthorize("@ss.hasPermission('system:mail-template:update')")
-    public CommonResult<Boolean> updateMailTemplate(@Valid @RequestBody MailTemplateUpdateReqVO updateReqVO){
+    public CommonResult<Boolean> updateMailTemplate(@Valid @RequestBody MailTemplateUpdateReqVO updateReqVO) {
         mailTempleService.updateMailTemplate(updateReqVO);
         return success(true);
     }

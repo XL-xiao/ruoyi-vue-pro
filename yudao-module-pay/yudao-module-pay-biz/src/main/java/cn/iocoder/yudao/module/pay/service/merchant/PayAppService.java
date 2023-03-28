@@ -98,14 +98,14 @@ public interface PayAppService {
      * @return 商户 Map
      */
     default Map<Long, PayAppDO> getAppMap(Collection<Long> appIdList) {
-        List<PayAppDO> list =  this.getAppList(appIdList);
+        List<PayAppDO> list = this.getAppList(appIdList);
         return CollectionUtils.convertMap(list, PayAppDO::getId);
     }
 
 
     /**
      * 支付应用的合法性
-     *
+     * <p>
      * 如果不合法，抛出 {@link ServiceException} 业务异常
      *
      * @param id 应用编号

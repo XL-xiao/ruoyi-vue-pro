@@ -17,14 +17,12 @@ uView UI，是[uni-app](https://uniapp.dcloud.io/)全面兼容nvue的uni-app生�
 
 ## [官方文档：https://uviewui.com](https://uviewui.com)
 
-
 ## 预览
 
 您可以通过**微信**扫码，查看最佳的演示效果。
 <br>
 <br>
 <img src="https://uviewui.com/common/weixin_mini_qrcode.png" width="220" height="220" >
-
 
 ## 链接
 
@@ -53,6 +51,7 @@ uView UI，是[uni-app](https://uniapp.dcloud.io/)全面兼容nvue的uni-app生�
 请通过[快速上手](https://uviewui.com/components/quickstart.html)了解更详细的内容
 
 ## 使用方法
+
 配置easycom规则后，自动按需引入，无需`import`组件，直接引用即可。
 
 ```html
@@ -62,5 +61,6 @@ uView UI，是[uni-app](https://uniapp.dcloud.io/)全面兼容nvue的uni-app生�
 ```
 
 ## 版权信息
+
 uView遵循[MIT](https://en.wikipedia.org/wiki/MIT_License)开源协议，意味着您无需支付任何费用，也无需授权，即可将uView应用到您的产品中。
 

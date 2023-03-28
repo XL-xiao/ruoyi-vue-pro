@@ -18,7 +18,7 @@ public class MpUtils {
     /**
      * 校验消息的格式是否符合要求
      *
-     * @param type 类型
+     * @param type    类型
      * @param message 消息
      */
     public static void validateMessage(Validator validator, String type, Object message) {
@@ -91,7 +91,7 @@ public class MpUtils {
 
     /**
      * 根据消息类型，获得对应的媒体文件类型
-     *
+     * <p>
      * 注意，不会返回 WxConsts.MediaFileType.THUMB，因为该类型会有明确标注
      *
      * @param messageType 消息类型 {@link  WxConsts.XmlMsgType}
@@ -113,55 +113,66 @@ public class MpUtils {
     /**
      * Text 类型的消息，参数校验 Group
      */
-    public interface TextMessageGroup {}
+    public interface TextMessageGroup {
+    }
 
     /**
      * Image 类型的消息，参数校验 Group
      */
-    public interface ImageMessageGroup {}
+    public interface ImageMessageGroup {
+    }
 
     /**
      * Voice 类型的消息，参数校验 Group
      */
-    public interface VoiceMessageGroup {}
+    public interface VoiceMessageGroup {
+    }
 
     /**
      * Video 类型的消息，参数校验 Group
      */
-    public interface VideoMessageGroup {}
+    public interface VideoMessageGroup {
+    }
 
     /**
      * News 类型的消息，参数校验 Group
      */
-    public interface NewsMessageGroup {}
+    public interface NewsMessageGroup {
+    }
 
     /**
      * Music 类型的消息，参数校验 Group
      */
-    public interface MusicMessageGroup {}
+    public interface MusicMessageGroup {
+    }
 
     /**
      * Click 类型的按钮，参数校验 Group
      */
-    public interface ClickButtonGroup {}
+    public interface ClickButtonGroup {
+    }
 
     /**
      * View 类型的按钮，参数校验 Group
      */
-    public interface ViewButtonGroup {}
+    public interface ViewButtonGroup {
+    }
 
     /**
      * MiniProgram 类型的按钮，参数校验 Group
      */
-    public interface MiniProgramButtonGroup {}
+    public interface MiniProgramButtonGroup {
+    }
 
     /**
      * SCANCODE_WAITMSG 类型的按钮，参数校验 Group
      */
-    public interface ScanCodeWaitMsgButtonGroup {}
+    public interface ScanCodeWaitMsgButtonGroup {
+    }
 
     /**
      * VIEW_LIMITED 类型的按钮，参数校验 Group
      */
-    public interface ViewLimitedButtonGroup {}
+    public interface ViewLimitedButtonGroup {
+    }
 }

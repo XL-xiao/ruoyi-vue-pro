@@ -28,16 +28,16 @@ public interface MpMessageService {
     /**
      * 从公众号，接收到粉丝消息
      *
-     * @param appId 微信公众号 appId
+     * @param appId     微信公众号 appId
      * @param wxMessage 消息
      */
     void receiveMessage(String appId, WxMpXmlMessage wxMessage);
 
     /**
      * 使用公众号，给粉丝回复消息
-     *
+     * <p>
      * 例如说：自动回复、客服消息、菜单回复消息等场景
-     *
+     * <p>
      * 注意，该方法只是返回 WxMpXmlOutMessage 对象，不会真的发送消息
      *
      * @param sendReqBO 消息内容
@@ -47,7 +47,7 @@ public interface MpMessageService {
 
     /**
      * 使用公众号，给粉丝发送【客服】消息
-     *
+     * <p>
      * 注意，该方法会真实发送消息
      *
      * @param sendReqVO 消息内容

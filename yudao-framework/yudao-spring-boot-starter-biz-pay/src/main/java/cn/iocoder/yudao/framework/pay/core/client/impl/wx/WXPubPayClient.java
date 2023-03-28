@@ -134,7 +134,6 @@ public class WXPubPayClient extends AbstractPayClient<WXPayClientConfig> {
     }
 
     /**
-     *
      * 微信支付回调 分v2 和v3 的处理方式
      *
      * @param data 通知结果

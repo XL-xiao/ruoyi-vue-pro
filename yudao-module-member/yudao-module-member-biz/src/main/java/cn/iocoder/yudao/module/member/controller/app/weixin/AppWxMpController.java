@@ -29,7 +29,7 @@ public class AppWxMpController {
 
     @PostMapping("/create-jsapi-signature")
     @Operation(summary = "创建微信 JS SDK 初始化所需的签名",
-        description = "参考 https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/JS-SDK.html 文档")
+            description = "参考 https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/JS-SDK.html 文档")
     public CommonResult<WxJsapiSignature> createJsapiSignature(@RequestParam("url") String url) throws WxErrorException {
         return success(mpService.createJsapiSignature(url));
     }

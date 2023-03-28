@@ -10,7 +10,8 @@
      -->
 
     <select id="selectList2" resultType="TestDemoDO">
-        SELECT * FROM infra_test_demo
+        SELECT *
+        FROM infra_test_demo
     </select>
 
 </mapper>

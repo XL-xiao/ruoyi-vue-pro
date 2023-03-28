@@ -1,4 +1,5 @@
 ## List 列表
+
 > **组件名：uni-list**
 > 代码块： `uList`、`uListItem`
 > 关联组件：`uni-list-item`、`uni-badge`、`uni-icons`、`uni-list-chat`、`uni-list-ad`
@@ -20,10 +21,10 @@ uni-list-item有很多风格，uni-list-item组件通过内置的属性，满足
 
 uni-list不包含下拉刷新和上拉翻页。上拉翻页另见组件：[uni-load-more](https://ext.dcloud.net.cn/plugin?id=29)
 
-
 ### 安装方式
 
-本组件符合[easycom](https://uniapp.dcloud.io/collocation/pages?id=easycom)规范，`HBuilderX 2.5.5`起，只需将本组件导入项目，在页面`template`中即可直接使用，无需在页面中`import`和注册`components`。
+本组件符合[easycom](https://uniapp.dcloud.io/collocation/pages?id=easycom)规范，`HBuilderX 2.5.5`起，只需将本组件导入项目，在页面`
+template`中即可直接使用，无需在页面中`import`和注册`components`。
 
 如需通过`npm`方式使用`uni-ui`组件，另见文档：[https://ext.dcloud.net.cn/plugin?id=55](https://ext.dcloud.net.cn/plugin?id=55)
 
@@ -39,9 +40,8 @@ uni-list不包含下拉刷新和上拉翻页。上拉翻页另见组件：[uni-l
 > - 如果需要修改 `switch`、`badge` 样式，请使用插槽自定义
 > - 在 `HBuilderX` 低版本中，可能会出现组件显示 `undefined` 的问题，请升级最新的 `HBuilderX` 或者 `cli`
 > - 如使用过程中有任何问题，或者您对uni-ui有一些好的建议，欢迎加入 uni-ui 交流群：871950839
- 
 
-### 基本用法 
+### 基本用法
 
 - 设置 `title` 属性，可以显示列表标题
 - 设置 `disabled` 属性，可以禁用当前项
@@ -79,7 +79,7 @@ uni-list不包含下拉刷新和上拉翻页。上拉翻页另见组件：[uni-l
 
 ```
 
-### 左侧显示略缩图、图标  
+### 左侧显示略缩图、图标
 
 - 设置 `thumb` 属性 ，可以在列表左侧显示略缩图
 - 设置 `show-extra-icon` 属性，并指定 `extra-icon` 可以在左侧显示图标
@@ -93,6 +93,7 @@ uni-list不包含下拉刷新和上拉翻页。上拉翻页另见组件：[uni-l
 ```
 
 ### 开启点击反馈和右侧箭头
+
 - 设置 `clickable` 为 `true` ，则表示这是一个可点击的列表，会默认给一个点击效果，并可以监听 `click` 事件
 - 设置 `link` 属性，会自动开启点击反馈，并给列表右侧添加一个箭头
 - 设置 `to` 属性，可以跳转页面，`link` 的值表示跳转方式，如果不指定，默认为 `navigateTo`
@@ -107,8 +108,8 @@ uni-list不包含下拉刷新和上拉翻页。上拉翻页另见组件：[uni-l
 
 ```
 
-
 ### 聊天列表示例
+
 - 设置 `clickable` 为 `true` ，则表示这是一个可点击的列表，会默认给一个点击效果，并可以监听 `click` 事件
 - 设置 `link` 属性，会自动开启点击反馈，`link` 的值表示跳转方式，如果不指定，默认为 `navigateTo`
 - 设置 `to` 属性，可以跳转页面
@@ -162,7 +163,6 @@ export default {
 
 ```
 
-
 ```css
 
 .chat-custom-right {
@@ -186,73 +186,61 @@ export default {
 
 ### List Props
 
-属性名			|类型		|默认值		|	说明																									
-:-:				|:-:		|:-:		|	:-:	
-border			|Boolean	|true		|	是否显示边框
-
+属性名 |类型 |默认值 | 说明																									
+:-:                |:-:        |:-:        |    :-:
+border |Boolean |true | 是否显示边框
 
 ### ListItem Props
 
-属性名			|类型		|默认值		|	说明																					
-:-:				|:-:		|:-:		|	:-:	
-title			|String		|-			|	标题
-note			|String		|-			|	描述
-ellipsis		|Number		|0			|	title 是否溢出隐藏，可选值，0:默认;  1:显示一行;	2:显示两行;【nvue 暂不支持】
-thumb			|String		|-			|	左侧缩略图，若thumb有值，则不会显示扩展图标
-thumbSize		|String 	|medium 	|	略缩图尺寸，可选值，lg:大图;  medium:一般;	sm:小图;
-showBadge		|Boolean	|false		|	是否显示数字角标	
-badgeText		|String		|-			|	数字角标内容
-badgeType		|String		|-			|	数字角标类型，参考[uni-icons](https://ext.dcloud.net.cn/plugin?id=21)	
-badgeStyle  |Object   |-      | 数字角标样式，使用uni-badge的custom-style参数
-rightText		|String		|-			|	右侧文字内容
-disabled		|Boolean	|false		|	是否禁用	
-showArrow 		|Boolean	|true		|	是否显示箭头图标			
-link			|String 	|navigateTo	|	新页面跳转方式，可选值见下表
-to				|String		|-			|	新页面跳转地址，如填写此属性，click 会返回页面是否跳转成功			
-clickable		|Boolean	|false		|	是否开启点击反馈
-showSwitch	    |Boolean	|false		|	是否显示Switch																			
-switchChecked	|Boolean	|false		|	Switch是否被选中																			
-showExtraIcon   |Boolean	|false		|	左侧是否显示扩展图标																		
-extraIcon		|Object		|-			|	扩展图标参数，格式为 ``{color: '#4cd964',size: '22',type: 'spinner'}``，参考 [uni-icons](https://ext.dcloud.net.cn/plugin?id=28)	
-direction		| String	|row		|	排版方向，可选值，row:水平排列;  column:垂直排列; 3个插槽是水平排还是垂直排，也受此属性控制
-
+属性名 |类型 |默认值 | 说明																					
+:-:                |:-:        |:-:        |    :-:
+title |String |- | 标题 note |String |- | 描述 ellipsis |Number |0 | title 是否溢出隐藏，可选值，0:默认; 1:显示一行; 2:显示两行;【nvue 暂不支持】 thumb
+|String |- | 左侧缩略图，若thumb有值，则不会显示扩展图标 thumbSize |String |medium | 略缩图尺寸，可选值，lg:大图; medium:一般; sm:小图; showBadge |Boolean
+|false | 是否显示数字角标 badgeText |String |- | 数字角标内容 badgeType |String |- |
+数字角标类型，参考[uni-icons](https://ext.dcloud.net.cn/plugin?id=21)
+badgeStyle |Object |- | 数字角标样式，使用uni-badge的custom-style参数 rightText |String |- | 右侧文字内容 disabled |Boolean |false | 是否禁用
+showArrow |Boolean |true | 是否显示箭头图标			
+link |String |navigateTo | 新页面跳转方式，可选值见下表 to |String |- | 新页面跳转地址，如填写此属性，click 会返回页面是否跳转成功			
+clickable |Boolean |false | 是否开启点击反馈 showSwitch |Boolean |false | 是否显示Switch																			
+switchChecked |Boolean |false | Switch是否被选中																			
+showExtraIcon |Boolean |false | 左侧是否显示扩展图标																		
+extraIcon |Object |- | 扩展图标参数，格式为 ``{color: '#4cd964',size: '22',type: 'spinner'}``
+，参考 [uni-icons](https://ext.dcloud.net.cn/plugin?id=28)
+direction | String |row | 排版方向，可选值，row:水平排列; column:垂直排列; 3个插槽是水平排还是垂直排，也受此属性控制
 
 #### Link Options
 
-属性名				|	说明
-:-:					|	:-:
-navigateTo 	| 	同 uni.navigateTo()
-redirectTo 	|	同 uni.reLaunch()
-reLaunch		|	同 uni.reLaunch()
-switchTab  	|	同 uni.switchTab()
+属性名 | 说明
+:-:                    |    :-:
+navigateTo | 同 uni.navigateTo()
+redirectTo | 同 uni.reLaunch()
+reLaunch | 同 uni.reLaunch()
+switchTab | 同 uni.switchTab()
 
 ### ListItem Events
 
-事件称名			|说明									|返回参数			
-:-:				|:-:									|:-:				
-click			|点击 uniListItem 触发事件，需开启点击反馈	|-					
-switchChange	|点击切换 Switch 时触发，需显示 switch		|e={value:checked}	
-
-
+事件称名 |说明 |返回参数			
+:-:                |:-:                                    |:-:				
+click |点击 uniListItem 触发事件，需开启点击反馈 |-					
+switchChange |点击切换 Switch 时触发，需显示 switch |e={value:checked}
 
 ### ListItem Slots
 
-名称	 	|	说明					
-:-:		|	:-:						
-header	|	左/上内容插槽，可完全自定义默认显示
-body	|	中间内容插槽，可完全自定义中间内容				
-footer	|	右/下内容插槽，可完全自定义右侧内容		
+名称 | 说明					
+:-:        |    :-:						
+header | 左/上内容插槽，可完全自定义默认显示 body | 中间内容插槽，可完全自定义中间内容				
+footer | 右/下内容插槽，可完全自定义右侧内容
 
 
 > **通过插槽扩展**
 > 需要注意的是当使用插槽时，内置样式将会失效，只保留排版样式，此时的样式需要开发者自己实现
-> 如果	`uni-list-item` 组件内置属性样式无法满足需求，可以使用插槽来自定义uni-list-item里的内容。
+> 如果    `uni-list-item` 组件内置属性样式无法满足需求，可以使用插槽来自定义uni-list-item里的内容。
 > uni-list-item提供了3个可扩展的插槽：`header`、`body`、`footer`
 > - 当 `direction` 属性为 `row` 时表示水平排列，此时 `header` 表示列表的左边部分，`body` 表示列表的中间部分，`footer` 表示列表的右边部分
 > - 当 `direction` 属性为 `column` 时表示垂直排列，此时 `header` 表示列表的上边部分，`body` 表示列表的中间部分，`footer` 表示列表的下边部分
-> 开发者可以只用1个插槽，也可以3个一起使用。在插槽中可自主编写view标签，实现自己所需的效果。
+    > 开发者可以只用1个插槽，也可以3个一起使用。在插槽中可自主编写view标签，实现自己所需的效果。
 
-	
+
 **示例**
 
 ```html
@@ -275,51 +263,35 @@ footer	|	右/下内容插槽，可完全自定义右侧内容
 </uni-list>
 ```
 
-
-
-
-
 ### ListItemChat Props
 
-属性名			|类型		|默认值		|	说明																		
-:-:				|:-:		|:-:		|	:-:	
-title 			|String		|-			|	标题
-note 			|String		|-			|	描述
-clickable		|Boolean	|false		|	是否开启点击反馈
-badgeText		|String		|-			|	数字角标内容，设置为 `dot` 将显示圆点
-badgePositon 	|String		|right		|	角标位置
-link			|String 	|navigateTo	|	是否展示右侧箭头并开启点击反馈，可选值见下表
-clickable		|Boolean	|false		|	是否开启点击反馈
-to				|String		|-			|	跳转页面地址，如填写此属性，click 会返回页面是否跳转成功	
-time			|String 	|-			|	右侧时间显示
-avatarCircle 	|Boolean 	|false		|	是否显示圆形头像
-avatar			|String 	|-			|	头像地址，avatarCircle 不填时生效
-avatarList 		|Array	 	|-			|	头像组，格式为 [{url:''}]
+属性名 |类型 |默认值 | 说明																		
+:-:                |:-:        |:-:        |    :-:
+title |String |- | 标题 note |String |- | 描述 clickable |Boolean |false | 是否开启点击反馈 badgeText |String |- | 数字角标内容，设置为 `dot`
+将显示圆点 badgePositon |String |right | 角标位置 link |String |navigateTo | 是否展示右侧箭头并开启点击反馈，可选值见下表 clickable |Boolean |false |
+是否开启点击反馈 to |String |- | 跳转页面地址，如填写此属性，click 会返回页面是否跳转成功 time |String |- | 右侧时间显示 avatarCircle |Boolean |false |
+是否显示圆形头像 avatar |String |- | 头像地址，avatarCircle 不填时生效 avatarList |Array |- | 头像组，格式为 [{url:''}]
 
 #### Link Options
 
-属性名		|	说明
-:-:			|	:-:
-navigateTo 	| 	同 uni.navigateTo()
-redirectTo 	|	同 uni.reLaunch()
-reLaunch	|	同 uni.reLaunch()
-switchTab  	|	同 uni.switchTab()
+属性名 | 说明
+:-:            |    :-:
+navigateTo | 同 uni.navigateTo()
+redirectTo | 同 uni.reLaunch()
+reLaunch | 同 uni.reLaunch()
+switchTab | 同 uni.switchTab()
 
 ### ListItemChat Slots
 
-名称	 	|	说明					
-:-		|	:-						
-default	|	自定义列表右侧内容（包括时间和角标显示）
+名称 | 说明					
+:- |    :-						
+default | 自定义列表右侧内容（包括时间和角标显示）
 
 ### ListItemChat Events
-事件称名			|	说明						|	返回参数			
-:-:				|	:-:						|	:-:	
-@click			|	点击 uniListChat 触发事件	|	{data:{}}	，如有 to 属性，会返回页面跳转信息	
 
-
-
-
-
+事件称名 | 说明 | 返回参数			
+:-:                |    :-:                        |    :-:
+@click | 点击 uniListChat 触发事件 | {data:{}} ，如有 to 属性，会返回页面跳转信息
 
 ## 基于uni-list扩展的页面模板
 

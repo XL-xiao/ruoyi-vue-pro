@@ -52,9 +52,9 @@ public interface PayRefundService {
     /**
      * 渠道的退款通知
      *
-     * @param channelId  渠道编号
-     * @param notify     通知
-     * @param rawNotify  通知数据
+     * @param channelId 渠道编号
+     * @param notify    通知
+     * @param rawNotify 通知数据
      */
     void notifyPayRefund(Long channelId, PayRefundNotifyRespDTO notify, PayNotifyReqDTO rawNotify);
 

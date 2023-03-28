@@ -82,15 +82,15 @@ public class AreaUtils {
 
     /**
      * 格式化区域
-     *
+     * <p>
      * 例如说：
-     *      1. id = “静安区”时：上海 上海市 静安区
-     *      2. id = “上海市”时：上海 上海市
-     *      3. id = “上海”时：上海
-     *      4. id = “美国”时：美国
+     * 1. id = “静安区”时：上海 上海市 静安区
+     * 2. id = “上海市”时：上海 上海市
+     * 3. id = “上海”时：上海
+     * 4. id = “美国”时：美国
      * 当区域在中国时，默认不显示中国
      *
-     * @param id 区域编号
+     * @param id        区域编号
      * @param separator 分隔符
      * @return 格式化后的区域
      */
@@ -108,7 +108,7 @@ public class AreaUtils {
             // “递归”父节点
             area = area.getParent();
             if (area == null
-                || ObjectUtils.equalsAny(area.getId(), Area.ID_GLOBAL, Area.ID_CHINA)) { // 跳过父节点为中国的情况
+                    || ObjectUtils.equalsAny(area.getId(), Area.ID_GLOBAL, Area.ID_CHINA)) { // 跳过父节点为中国的情况
                 break;
             }
             sb.insert(0, separator);

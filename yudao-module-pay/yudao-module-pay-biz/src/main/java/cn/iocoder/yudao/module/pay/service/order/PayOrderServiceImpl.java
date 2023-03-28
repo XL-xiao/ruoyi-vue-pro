@@ -185,6 +185,7 @@ public class PayOrderServiceImpl implements PayOrderService {
 
     /**
      * 根据支付渠道的编码，生成支付渠道的返回地址
+     *
      * @param channel 支付渠道
      * @return 支付成功返回的地址。 配置地址 + "/" + channel id
      */
@@ -241,7 +242,7 @@ public class PayOrderServiceImpl implements PayOrderService {
     /**
      * 更新 PayOrderExtensionDO 支付成功
      *
-     * @param no 支付订单号（支付模块）
+     * @param no        支付订单号（支付模块）
      * @param rawNotify 通知数据
      * @return PayOrderExtensionDO 对象
      */
@@ -269,9 +270,9 @@ public class PayOrderServiceImpl implements PayOrderService {
     /**
      * 更新 PayOrderDO 支付成功
      *
-     * @param channel 支付渠道
+     * @param channel        支付渠道
      * @param orderExtension 支付拓展单
-     * @param notify 通知回调
+     * @param notify         通知回调
      * @return PayOrderDO 对象
      */
     private PayOrderDO updatePayOrderSuccess(PayChannelDO channel, PayOrderExtensionDO orderExtension,

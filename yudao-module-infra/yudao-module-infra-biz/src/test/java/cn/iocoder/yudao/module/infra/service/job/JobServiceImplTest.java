@@ -80,7 +80,7 @@ public class JobServiceImplTest extends BaseDbUnitTest {
     }
 
     @Test
-    public void testUpdateJob_jobNotExists(){
+    public void testUpdateJob_jobNotExists() {
         // 准备参数
         JobUpdateReqVO reqVO = randomPojo(JobUpdateReqVO.class, o -> o.setCronExpression("0 0/1 * * * ? *"));
 
@@ -89,7 +89,7 @@ public class JobServiceImplTest extends BaseDbUnitTest {
     }
 
     @Test
-    public void testUpdateJob_onlyNormalStatus(){
+    public void testUpdateJob_onlyNormalStatus() {
         // mock 数据
         JobDO job = randomPojo(JobDO.class, o -> o.setStatus(JobStatusEnum.INIT.getStatus()));
         jobMapper.insert(job);
@@ -208,7 +208,8 @@ public class JobServiceImplTest extends BaseDbUnitTest {
         });
         jobMapper.insert(dbJob);
         // 测试 id 不匹配
-        jobMapper.insert(cloneIgnoreId(dbJob, o -> {}));
+        jobMapper.insert(cloneIgnoreId(dbJob, o -> {
+        }));
 
         // 准备参数
         Collection<Long> ids = singletonList(dbJob.getId());

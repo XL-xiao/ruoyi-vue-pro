@@ -44,7 +44,7 @@ public class BpmTaskEventListener extends AbstractFlowableEngineEventListener {
             .add(FlowableEngineEventType.ACTIVITY_CANCELLED)
             .build();
 
-    public BpmTaskEventListener(){
+    public BpmTaskEventListener() {
         super(TASK_EVENTS);
     }
 
@@ -55,12 +55,12 @@ public class BpmTaskEventListener extends AbstractFlowableEngineEventListener {
 
     @Override
     protected void taskCompleted(FlowableEngineEntityEvent event) {
-        taskService.updateTaskExtComplete((Task)event.getEntity());
+        taskService.updateTaskExtComplete((Task) event.getEntity());
     }
 
     @Override
     protected void taskAssigned(FlowableEngineEntityEvent event) {
-        taskService.updateTaskExtAssign((Task)event.getEntity());
+        taskService.updateTaskExtAssign((Task) event.getEntity());
     }
 
     @Override

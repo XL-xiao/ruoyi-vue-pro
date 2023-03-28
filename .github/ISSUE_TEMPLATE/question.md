@@ -1,7 +1,5 @@
 ---
-name: 问题反馈
-about: 请详细描述，以便更高快的获得到解决
-title: ''
+name: 问题反馈 about: 请详细描述，以便更高快的获得到解决 title: ''
 labels: ''
 assignees: ''
 

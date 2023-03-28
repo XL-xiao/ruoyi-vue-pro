@@ -112,10 +112,14 @@ public class AliyunSmsClient extends AbstractSmsClient {
     @VisibleForTesting
     Integer convertSmsTemplateAuditStatus(Integer templateStatus) {
         switch (templateStatus) {
-            case 0: return SmsTemplateAuditStatusEnum.CHECKING.getStatus();
-            case 1: return SmsTemplateAuditStatusEnum.SUCCESS.getStatus();
-            case 2: return SmsTemplateAuditStatusEnum.FAIL.getStatus();
-            default: throw new IllegalArgumentException(String.format("未知审核状态(%d)", templateStatus));
+            case 0:
+                return SmsTemplateAuditStatusEnum.CHECKING.getStatus();
+            case 1:
+                return SmsTemplateAuditStatusEnum.SUCCESS.getStatus();
+            case 2:
+                return SmsTemplateAuditStatusEnum.FAIL.getStatus();
+            default:
+                throw new IllegalArgumentException(String.format("未知审核状态(%d)", templateStatus));
         }
     }
 
@@ -148,7 +152,7 @@ public class AliyunSmsClient extends AbstractSmsClient {
 
     /**
      * 短信接收状态
-     *
+     * <p>
      * 参见 https://help.aliyun.com/document_detail/101867.html 文档
      *
      * @author 芋道源码
@@ -194,14 +198,14 @@ public class AliyunSmsClient extends AbstractSmsClient {
         private String bizId;
         /**
          * 用户序列号
-         *
+         * <p>
          * 这里我们传递的是 SysSmsLogDO 的日志编号
          */
         @JsonProperty("out_id")
         private String outId;
         /**
          * 短信长度，例如说 1、2、3
-         *
+         * <p>
          * 140 字节算一条短信，短信长度超过 140 字节时会拆分成多条短信发送
          */
         @JsonProperty("sms_size")

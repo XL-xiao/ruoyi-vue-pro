@@ -1,6 +1,8 @@
 package cn.iocoder.yudao.module.pay.controller.admin.merchant.vo.channel;
+
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
+
 import javax.validation.constraints.*;
 
 @Schema(description = "管理后台 - 支付渠道 更新 Request VO")

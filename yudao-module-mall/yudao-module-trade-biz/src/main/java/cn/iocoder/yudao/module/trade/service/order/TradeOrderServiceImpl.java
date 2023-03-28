@@ -165,7 +165,7 @@ public class TradeOrderServiceImpl implements TradeOrderService {
     /**
      * 校验收件地址是否存在
      *
-     * @param userId 用户编号
+     * @param userId    用户编号
      * @param addressId 收件地址编号
      * @return 收件地址
      */
@@ -184,7 +184,7 @@ public class TradeOrderServiceImpl implements TradeOrderService {
         tradeOrderDO.setStatus(TradeOrderStatusEnum.UNPAID.getStatus());
         tradeOrderDO.setType(TradeOrderTypeEnum.NORMAL.getType());
         tradeOrderDO.setAfterSaleStatus(TradeOrderAfterSaleStatusEnum.NONE.getStatus());
-        tradeOrderDO.setProductCount(getSumValue(order.getItems(),  PriceCalculateRespDTO.OrderItem::getCount, Integer::sum));
+        tradeOrderDO.setProductCount(getSumValue(order.getItems(), PriceCalculateRespDTO.OrderItem::getCount, Integer::sum));
         tradeOrderDO.setTerminal(TerminalEnum.H5.getTerminal()); // todo 数据来源?
         tradeOrderDO.setAdjustPrice(0).setPayed(false); // 支付信息
         tradeOrderDO.setDeliveryStatus(TradeOrderDeliveryStatusEnum.UNDELIVERED.getStatus()); // 物流信息
@@ -202,11 +202,11 @@ public class TradeOrderServiceImpl implements TradeOrderService {
 
     /**
      * 执行创建完创建完订单后的逻辑
-     *
+     * <p>
      * 例如说：优惠劵的扣减、积分的扣减、支付单的创建等等
      *
-     * @param userId 用户编号
-     * @param createReqVO 创建订单请求
+     * @param userId       用户编号
+     * @param createReqVO  创建订单请求
      * @param tradeOrderDO 交易订单
      */
     private void afterCreateTradeOrder(Long userId, AppTradeOrderCreateReqVO createReqVO,
@@ -266,11 +266,11 @@ public class TradeOrderServiceImpl implements TradeOrderService {
 
     /**
      * 校验交易订单满足被支付的条件
-     *
+     * <p>
      * 1. 交易订单未支付
      * 2. 支付单已支付
      *
-     * @param id 交易订单编号
+     * @param id         交易订单编号
      * @param payOrderId 支付订单编号
      * @return 交易订单
      */
@@ -350,7 +350,7 @@ public class TradeOrderServiceImpl implements TradeOrderService {
 
     /**
      * 校验交易订单满足被发货的条件
-     *
+     * <p>
      * 1. 交易订单未发货
      *
      * @param id 交易订单编号
@@ -364,7 +364,7 @@ public class TradeOrderServiceImpl implements TradeOrderService {
         }
         // 校验订单是否是待发货状态
         if (!TradeOrderStatusEnum.isUndelivered(order.getStatus())
-            || ObjectUtil.notEqual(order.getDeliveryStatus(), TradeOrderDeliveryStatusEnum.UNDELIVERED.getStatus())) {
+                || ObjectUtil.notEqual(order.getDeliveryStatus(), TradeOrderDeliveryStatusEnum.UNDELIVERED.getStatus())) {
             throw exception(ORDER_DELIVERY_FAIL_STATUS_NOT_UNDELIVERED);
         }
         return order;
@@ -398,11 +398,11 @@ public class TradeOrderServiceImpl implements TradeOrderService {
 
     /**
      * 校验交易订单满足可售货的条件
-     *
+     * <p>
      * 1. 交易订单待收货
      *
      * @param userId 用户编号
-     * @param id 交易订单编号
+     * @param id     交易订单编号
      * @return 交易订单
      */
     private TradeOrderDO validateOrderReceivable(Long userId, Long id) {
@@ -472,7 +472,7 @@ public class TradeOrderServiceImpl implements TradeOrderService {
     public void updateOrderItemAfterSaleStatus(Long id, Integer oldAfterSaleStatus, Integer newAfterSaleStatus, Integer refundPrice) {
         // 如果退款成功，则 refundPrice 非空
         if (Objects.equals(newAfterSaleStatus, TradeOrderItemAfterSaleStatusEnum.SUCCESS.getStatus())
-            && refundPrice == null) {
+                && refundPrice == null) {
             throw new IllegalArgumentException(StrUtil.format("id({}) 退款成功，退款金额不能为空", id));
         }
 

@@ -19,8 +19,10 @@ public class PaySeqUtils {
     private static final AtomicLong MER_ORDER_NO_SEQ = new AtomicLong(0L);
 
     // TODO 芋艿：需要看看
+
     /**
      * 生成商户退款单号，用于测试，应该由商户系统生成
+     *
      * @return 商户退款单
      */
     public static String genMerchantRefundNo() {
@@ -33,6 +35,7 @@ public class PaySeqUtils {
 
     /**
      * 生成退款请求号
+     *
      * @return 退款请求号
      */
     public static String genRefundReqNo() {
@@ -43,6 +46,7 @@ public class PaySeqUtils {
 
     /**
      * 生成商户订单编号号 用于测试，应该由商户系统生成
+     *
      * @return 商户订单编号
      */
     public static String genMerchantOrderNo() {

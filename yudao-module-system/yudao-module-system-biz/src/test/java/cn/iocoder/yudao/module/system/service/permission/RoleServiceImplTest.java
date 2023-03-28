@@ -222,7 +222,8 @@ public class RoleServiceImplTest extends BaseDbUnitTest {
         RoleDO dbRole = randomPojo(RoleDO.class, o -> o.setStatus(CommonStatusEnum.ENABLE.getStatus()));
         roleMapper.insert(dbRole);
         // 测试 id 不匹配
-        roleMapper.insert(cloneIgnoreId(dbRole, o -> {}));
+        roleMapper.insert(cloneIgnoreId(dbRole, o -> {
+        }));
         roleService.initLocalCache();
         // 准备参数
         Collection<Long> ids = singleton(dbRole.getId());

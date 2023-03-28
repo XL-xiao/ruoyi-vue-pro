@@ -97,7 +97,7 @@ public class ProductSpuServiceImpl implements ProductSpuService {
      * 基于 SKU 的信息，初始化 SPU 的信息
      * 主要是计数相关的字段，例如说市场价、最大最小价、库存等等
      *
-     * @param spu 商品 SPU
+     * @param spu  商品 SPU
      * @param skus 商品 SKU 数组
      */
     private void initSpuFromSkus(ProductSpuDO spu, List<ProductSkuCreateOrUpdateReqVO> skus) {

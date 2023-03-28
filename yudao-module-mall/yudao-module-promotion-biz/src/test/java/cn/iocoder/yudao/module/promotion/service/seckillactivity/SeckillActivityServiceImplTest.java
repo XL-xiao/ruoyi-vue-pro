@@ -24,10 +24,10 @@ import static cn.iocoder.yudao.module.promotion.enums.ErrorCodeConstants.SECKILL
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
-* {@link SeckillActivityServiceImpl} 的单元测试类
-*
-* @author 芋道源码
-*/
+ * {@link SeckillActivityServiceImpl} 的单元测试类
+ *
+ * @author 芋道源码
+ */
 @Import(SeckillActivityServiceImpl.class)
 @Disabled // TODO 芋艿：未来开启
 public class SeckillActivityServiceImplTest extends BaseDbUnitTest {
@@ -88,8 +88,8 @@ public class SeckillActivityServiceImplTest extends BaseDbUnitTest {
 
         // 调用
         seckillActivityService.deleteSeckillActivity(id);
-       // 校验数据不存在了
-       assertNull(seckillActivityMapper.selectById(id));
+        // 校验数据不存在了
+        assertNull(seckillActivityMapper.selectById(id));
     }
 
     @Test
@@ -104,57 +104,57 @@ public class SeckillActivityServiceImplTest extends BaseDbUnitTest {
     @Test
     @Disabled  // TODO 请修改 null 为需要的值，然后删除 @Disabled 注解
     public void testGetSeckillActivityPage() {
-       // mock 数据
-       SeckillActivityDO dbSeckillActivity = randomPojo(SeckillActivityDO.class, o -> { // 等会查询到
-           o.setName(null);
-           o.setStatus(null);
-           o.setTimeIds(null);
-           o.setCreateTime(null);
-       });
-       seckillActivityMapper.insert(dbSeckillActivity);
-       // 测试 name 不匹配
-       seckillActivityMapper.insert(cloneIgnoreId(dbSeckillActivity, o -> o.setName(null)));
-       // 测试 status 不匹配
-       seckillActivityMapper.insert(cloneIgnoreId(dbSeckillActivity, o -> o.setStatus(null)));
-       // 测试 timeId 不匹配
-       seckillActivityMapper.insert(cloneIgnoreId(dbSeckillActivity, o -> o.setTimeIds(null)));
-       // 测试 createTime 不匹配
-       seckillActivityMapper.insert(cloneIgnoreId(dbSeckillActivity, o -> o.setCreateTime(null)));
-       // 准备参数
-       SeckillActivityPageReqVO reqVO = new SeckillActivityPageReqVO();
-       reqVO.setName(null);
-       reqVO.setStatus(null);
-       reqVO.setTimeId(null);
-       reqVO.setCreateTime((new LocalDateTime[]{}));
+        // mock 数据
+        SeckillActivityDO dbSeckillActivity = randomPojo(SeckillActivityDO.class, o -> { // 等会查询到
+            o.setName(null);
+            o.setStatus(null);
+            o.setTimeIds(null);
+            o.setCreateTime(null);
+        });
+        seckillActivityMapper.insert(dbSeckillActivity);
+        // 测试 name 不匹配
+        seckillActivityMapper.insert(cloneIgnoreId(dbSeckillActivity, o -> o.setName(null)));
+        // 测试 status 不匹配
+        seckillActivityMapper.insert(cloneIgnoreId(dbSeckillActivity, o -> o.setStatus(null)));
+        // 测试 timeId 不匹配
+        seckillActivityMapper.insert(cloneIgnoreId(dbSeckillActivity, o -> o.setTimeIds(null)));
+        // 测试 createTime 不匹配
+        seckillActivityMapper.insert(cloneIgnoreId(dbSeckillActivity, o -> o.setCreateTime(null)));
+        // 准备参数
+        SeckillActivityPageReqVO reqVO = new SeckillActivityPageReqVO();
+        reqVO.setName(null);
+        reqVO.setStatus(null);
+        reqVO.setTimeId(null);
+        reqVO.setCreateTime((new LocalDateTime[]{}));
 
-       // 调用
-       PageResult<SeckillActivityDO> pageResult = seckillActivityService.getSeckillActivityPage(reqVO);
-       // 断言
-       assertEquals(1, pageResult.getTotal());
-       assertEquals(1, pageResult.getList().size());
-       assertPojoEquals(dbSeckillActivity, pageResult.getList().get(0));
+        // 调用
+        PageResult<SeckillActivityDO> pageResult = seckillActivityService.getSeckillActivityPage(reqVO);
+        // 断言
+        assertEquals(1, pageResult.getTotal());
+        assertEquals(1, pageResult.getList().size());
+        assertPojoEquals(dbSeckillActivity, pageResult.getList().get(0));
     }
 
     @Test
     @Disabled  // TODO 请修改 null 为需要的值，然后删除 @Disabled 注解
     public void testGetSeckillActivityList() {
-       // mock 数据
-       SeckillActivityDO dbSeckillActivity = randomPojo(SeckillActivityDO.class, o -> { // 等会查询到
-           o.setName(null);
-           o.setStatus(null);
-           o.setTimeIds(null);
-           o.setCreateTime(null);
-       });
-       seckillActivityMapper.insert(dbSeckillActivity);
-       // 测试 name 不匹配
-       seckillActivityMapper.insert(cloneIgnoreId(dbSeckillActivity, o -> o.setName(null)));
-       // 测试 status 不匹配
-       seckillActivityMapper.insert(cloneIgnoreId(dbSeckillActivity, o -> o.setStatus(null)));
-       // 测试 timeId 不匹配
-       seckillActivityMapper.insert(cloneIgnoreId(dbSeckillActivity, o -> o.setTimeIds(null)));
-       // 测试 createTime 不匹配
-       seckillActivityMapper.insert(cloneIgnoreId(dbSeckillActivity, o -> o.setCreateTime(null)));
-       // 准备参数
+        // mock 数据
+        SeckillActivityDO dbSeckillActivity = randomPojo(SeckillActivityDO.class, o -> { // 等会查询到
+            o.setName(null);
+            o.setStatus(null);
+            o.setTimeIds(null);
+            o.setCreateTime(null);
+        });
+        seckillActivityMapper.insert(dbSeckillActivity);
+        // 测试 name 不匹配
+        seckillActivityMapper.insert(cloneIgnoreId(dbSeckillActivity, o -> o.setName(null)));
+        // 测试 status 不匹配
+        seckillActivityMapper.insert(cloneIgnoreId(dbSeckillActivity, o -> o.setStatus(null)));
+        // 测试 timeId 不匹配
+        seckillActivityMapper.insert(cloneIgnoreId(dbSeckillActivity, o -> o.setTimeIds(null)));
+        // 测试 createTime 不匹配
+        seckillActivityMapper.insert(cloneIgnoreId(dbSeckillActivity, o -> o.setCreateTime(null)));
+        // 准备参数
 //       SeckillActivityExportReqVO reqVO = new SeckillActivityExportReqVO();
 //       reqVO.setName(null);
 //       reqVO.setStatus(null);

@@ -204,7 +204,7 @@ public class MpUserServiceImpl implements MpUserService {
             if (CollUtil.isEmpty(tagIds)) {
                 return;
             }
-            for (Long tagId: tagIds) {
+            for (Long tagId : tagIds) {
                 mpService.getUserTagService().batchTagging(tagId, new String[]{openid});
             }
         } catch (WxErrorException e) {

@@ -12,7 +12,7 @@ import lombok.*;
 
 /**
  * 交易售后日志 DO
- *
+ * <p>
  * // TODO 可优化：参考淘宝或者有赞：1）增加 action 表示什么操作；2）content 记录每个操作的明细
  *
  * @author 芋道源码
@@ -34,44 +34,44 @@ public class TradeAfterSaleLogDO extends BaseDO {
     private Long id;
     /**
      * 用户编号
-     *
+     * <p>
      * 关联 1：AdminUserDO 的 id 字段
      * 关联 2：MemberUserDO 的 id 字段
      */
     private Long userId;
     /**
      * 用户类型
-     *
+     * <p>
      * 枚举 {@link UserTypeEnum}
      */
     private Integer userType;
     /**
      * 售后编号
-     *
+     * <p>
      * 关联 {@link TradeAfterSaleDO#getId()}
      */
     private Long afterSaleId;
     /**
      * 订单编号
-     *
+     * <p>
      * 关联 {@link TradeOrderDO#getId()}
      */
     private Long orderId;
     /**
      * 订单项编号
-     *
+     * <p>
      * 关联 {@link TradeOrderItemDO#getId()}
      */
     private Long orderItemId;
     /**
      * 售后状态（之前）
-     *
+     * <p>
      * 枚举 {@link TradeAfterSaleStatusEnum}
      */
     private Integer beforeStatus;
     /**
      * 售后状态（之后）
-     *
+     * <p>
      * 枚举 {@link TradeAfterSaleStatusEnum}
      */
     private Integer afterStatus;

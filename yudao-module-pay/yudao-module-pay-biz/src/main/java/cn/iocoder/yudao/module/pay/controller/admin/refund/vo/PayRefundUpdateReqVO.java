@@ -1,6 +1,8 @@
 package cn.iocoder.yudao.module.pay.controller.admin.refund.vo;
+
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
+
 import javax.validation.constraints.*;
 
 @Schema(description = "管理后台 - 退款订单更新 Request VO")

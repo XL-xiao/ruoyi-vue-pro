@@ -55,7 +55,7 @@ public interface PayOrderMapper extends BaseMapperX<PayOrderDO> {
     /**
      * 查询符合的订单数量
      *
-     * @param appId 应用编号
+     * @param appId  应用编号
      * @param status 订单状态
      * @return 条数
      */

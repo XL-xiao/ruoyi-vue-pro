@@ -1,5 +1,5 @@
-import {login, logout, getInfo, socialLogin, smsLogin} from '@/api/login'
-import {setToken, removeToken} from '@/utils/auth'
+import {getInfo, login, logout, smsLogin, socialLogin} from '@/api/login'
+import {removeToken, setToken} from '@/utils/auth'
 
 const user = {
   state: {
@@ -33,7 +33,7 @@ const user = {
 
   actions: {
     // 登录
-    Login({ commit }, userInfo) {
+    Login({commit}, userInfo) {
       const username = userInfo.username.trim()
       const password = userInfo.password
       const captchaVerification = userInfo.captchaVerification
@@ -53,7 +53,7 @@ const user = {
     },
 
     // 社交登录
-    SocialLogin({ commit }, userInfo) {
+    SocialLogin({commit}, userInfo) {
       const code = userInfo.code
       const state = userInfo.state
       const type = userInfo.type
@@ -70,11 +70,11 @@ const user = {
     },
 
     // 短信登录
-    SmsLogin({ commit }, userInfo) {
+    SmsLogin({commit}, userInfo) {
       const mobile = userInfo.mobile.trim()
       const mobileCode = userInfo.mobileCode
       return new Promise((resolve, reject) => {
-        smsLogin(mobile,mobileCode).then(res => {
+        smsLogin(mobile, mobileCode).then(res => {
           res = res.data;
           // 设置 token
           setToken(res)
@@ -85,7 +85,7 @@ const user = {
       })
     },
     // 获取用户信息
-    GetInfo({ commit, state }) {
+    GetInfo({commit, state}) {
       return new Promise((resolve, reject) => {
         getInfo().then(res => {
           // 没有 data 数据，赋予个默认值
@@ -105,7 +105,7 @@ const user = {
 
           res = res.data; // 读取 data 数据
           const user = res.user
-          const avatar = ( user.avatar === "" || user.avatar == null ) ? require("@/assets/images/profile.jpg") : user.avatar;
+          const avatar = (user.avatar === "" || user.avatar == null) ? require("@/assets/images/profile.jpg") : user.avatar;
           if (res.roles && res.roles.length > 0) { // 验证返回的roles是否是一个非空数组
             commit('SET_ROLES', res.roles)
             commit('SET_PERMISSIONS', res.permissions)
@@ -124,7 +124,7 @@ const user = {
     },
 
     // 退出系统
-    LogOut({ commit, state }) {
+    LogOut({commit, state}) {
       return new Promise((resolve, reject) => {
         logout(state.token).then(() => {
           commit('SET_ROLES', [])

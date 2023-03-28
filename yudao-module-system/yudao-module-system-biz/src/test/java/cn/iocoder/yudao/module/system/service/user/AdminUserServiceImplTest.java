@@ -244,7 +244,7 @@ public class AdminUserServiceImplTest extends BaseDbUnitTest {
         ByteArrayInputStream avatarFile = new ByteArrayInputStream(avatarFileBytes);
         // mock 方法
         String avatar = randomString();
-        when(fileApi.createFile(eq( avatarFileBytes))).thenReturn(avatar);
+        when(fileApi.createFile(eq(avatarFileBytes))).thenReturn(avatar);
 
         // 调用
         userService.updateUserAvatar(userId, avatarFile);
@@ -289,7 +289,7 @@ public class AdminUserServiceImplTest extends BaseDbUnitTest {
     }
 
     @Test
-    public void testDeleteUser_success(){
+    public void testDeleteUser_success() {
         // mock 数据
         AdminUserDO dbUser = randomAdminUserDO();
         userMapper.insert(dbUser);

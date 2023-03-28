@@ -1,4 +1,5 @@
 ## 2.0.34（2022-09-25）
+
 # uView2.0重磅发布，利剑出鞘，一统江湖
 
 1. `u-input`、`u-textarea`增加`ignoreCompositionEvent`属性
@@ -11,13 +12,18 @@
 8. `u-calendar`修复`maxDate`设置为当前日期，并且当前时间大于08：00时无法显示日期列表的问题 (#724)
 9. `u-radio`增加一个默认插槽用于自定义修改label内容 (#680)
 10. 修复`timeFormat`函数在safari重的兼容性问题 (#664)
+
 ## 2.0.33（2022-06-17）
+
 # uView2.0重磅发布，利剑出鞘，一统江湖
 
 1. 修复`loadmore`组件`lineColor`类型错误问题
 2. 修复`u-parse`组件`imgtap`、`linktap`不生效问题
+
 ## 2.0.32（2022-06-16）
+
 # uView2.0重磅发布，利剑出鞘，一统江湖
+
 1. `u-loadmore`新增自定义颜色、虚/实线
 2. 修复`u-swiper-action`组件部分平台不能上下滑动的问题
 3. 修复`u-list`回弹问题
@@ -29,7 +35,9 @@
 9. 修复`image`组件`load`事件无回调对象问题
 10. 修复`button`组件`loadingSize`设置无效问题
 10. 其他修复
+
 ## 2.0.31（2022-04-19）
+
 # uView2.0重磅发布，利剑出鞘，一统江湖
 
 1. 修复`upload`在`vue`页面上传成功后没有成功标志的问题
@@ -37,7 +45,9 @@
 3. 修复`u-code-input`组件在`nvue`页面编译到`app`平台上光标异常问题（`app`去除此功能）
 4. 修复`actionSheet`组件标题关闭按钮点击事件名称错误的问题
 5. 其他修复
+
 ## 2.0.30（2022-04-04）
+
 # uView2.0重磅发布，利剑出鞘，一统江湖
 
 1. `u-rate`增加`readonly`属性
@@ -62,7 +72,9 @@
 20. 修复`u-text`只有手机号可拨打的问题
 21. 修复`u-textarea`不能换行的问题
 22. 其他修复
+
 ## 2.0.29（2022-03-13）
+
 # uView2.0重磅发布，利剑出鞘，一统江湖
 
 1. 修复`u--text`组件设置`decoration`属性未生效的问题
@@ -76,7 +88,9 @@
 9. 修复`config.unit`属性设为`rpx`时，导航栏占用高度不足导致塌陷的问题
 10. 修复`u-datetime-picker`组件`itemHeight`无效问题
 11. 其他修复
+
 ## 2.0.28（2022-02-22）
+
 # uView2.0重磅发布，利剑出鞘，一统江湖
 
 1. search组件新增searchIconSize属性
@@ -87,22 +101,31 @@
 6. 优化表单rules提示
 7. 修复avatar组件src为空时，展示状态不对
 8. 其他修复
+
 ## 2.0.27（2022-01-28）
+
 # uView2.0重磅发布，利剑出鞘，一统江湖
 
 1.样式修复
+
 ## 2.0.26（2022-01-28）
+
 # uView2.0重磅发布，利剑出鞘，一统江湖
 
 1.样式修复
+
 ## 2.0.25（2022-01-27）
+
 # uView2.0重磅发布，利剑出鞘，一统江湖
 
 1. 修复text组件mode=price时，可能会导致精度错误的问题
-2. 添加$u.setConfig()方法，可设置uView内置的config, props, zIndex, color属性，详见：[修改uView内置配置方案](https://uviewui.com/components/setting.html#%E9%BB%98%E8%AE%A4%E5%8D%95%E4%BD%8D%E9%85%8D%E7%BD%AE)
+2. 添加$u.setConfig()方法，可设置uView内置的config, props, zIndex,
+   color属性，详见：[修改uView内置配置方案](https://uviewui.com/components/setting.html#%E9%BB%98%E8%AE%A4%E5%8D%95%E4%BD%8D%E9%85%8D%E7%BD%AE)
 3. 优化form组件在errorType=toast时，如果输入错误页面会有抖动的问题
 4. 修复$u.addUnit()对配置默认单位可能无效的问题
+
 ## 2.0.24（2022-01-25）
+
 # uView2.0重磅发布，利剑出鞘，一统江湖
 
 1. 修复swiper在current指定非0时缩放有误
@@ -119,7 +142,9 @@
 12. 修复box-sizing在app下的警告
 13. 修复u-navbar在小程序中报运行时错误
 14. 其他修复
+
 ## 2.0.23（2022-01-24）
+
 # uView2.0重磅发布，利剑出鞘，一统江湖
 
 1. 修复image组件在hx3.3.9的nvue下可能会显示异常的问题
@@ -127,13 +152,17 @@
 3. 修复text组件单行时无法显示省略号的问题
 4. navbar添加titleStyle参数
 5. 升级到hx3.3.9可消除nvue下控制台样式警告的问题
+
 ## 2.0.22（2022-01-19）
+
 # uView2.0重磅发布，利剑出鞘，一统江湖
 
 1. $u.page()方法优化，避免在特殊场景可能报错的问题
 2. picker组件添加immediateChange参数
 3. 新增$u.pages()方法
+
 ## 2.0.21（2022-01-19）
+
 # uView2.0重磅发布，利剑出鞘，一统江湖
 
 1. 优化：form组件在用户设置rules的时候提示用户model必传
@@ -145,14 +174,16 @@
 7. 修复在text组件mode为phone时call属性无效的问题
 8. 处理u-form clearValidate方法
 9. 其他修复
+
 ## 2.0.20（2022-01-14）
+
 # uView2.0重磅发布，利剑出鞘，一统江湖
 
 1. 修复calendar默认会选择一个日期，如果直接点确定的话，无法取到值的问题
 2. 修复Slider缺少disabled props 还有注释
 3. 修复u-notice-bar点击事件无法拿到index索引值的问题
 4. 修复u-collapse-item在vue文件下，app端自定义插槽不生效的问题
-5. 优化头像为空时显示默认头像 
+5. 优化头像为空时显示默认头像
 6. 修复图片地址赋值后判断加载状态为完成问题
 7. 修复日历滚动到默认日期月份区域
 8. search组件暴露点击左边icon事件
@@ -163,7 +194,9 @@
 13. 修复Upload上传 disabled为true时，控制台报hoverClass类型错误
 14. 临时处理ios app下grid点击坍塌问题
 15. 其他修复
+
 ## 2.0.19（2021-12-29）
+
 # uView2.0重磅发布，利剑出鞘，一统江湖
 
 1. 优化微信小程序包体积可在微信中预览，请升级HbuilderX3.3.4，同时在“运行->运行到小程序模拟器”中勾选“运行时是否压缩代码”
@@ -172,7 +205,9 @@
 4. 允许avatar组件的事件冒泡
 5. 修复cell组件报错问题
 6. 其他修复
+
 ## 2.0.18（2021-12-28）
+
 # uView2.0重磅发布，利剑出鞘，一统江湖
 
 1. 修复app端编译报错问题
@@ -186,7 +221,9 @@
 9. 修复当 grid只有 1到2时 在小程序端algin设置无效的问题
 10. 处理form-item的label为top时，取消错误提示的左边距
 11. 其他修复
+
 ## 2.0.17（2021-12-26）
+
 ## uView正在参与开源中国的“年度最佳项目”评选，之前投过票的现在也可以投票，恳请同学们投一票，[点此帮助uView](https://www.oschina.net/project/top_cn_2021/?id=583)
 
 # uView2.0重磅发布，利剑出鞘，一统江湖
@@ -194,14 +231,18 @@
 1. 解决HBuilderX3.3.3.20211225版本导致的样式问题
 2. calendar日历添加monthNum参数
 3. navbar添加center slot
+
 ## 2.0.16（2021-12-25）
+
 ## uView正在参与开源中国的“年度最佳项目”评选，之前投过票的现在也可以投票，恳请同学们投一票，[点此帮助uView](https://www.oschina.net/project/top_cn_2021/?id=583)
 
 # uView2.0重磅发布，利剑出鞘，一统江湖
 
 1. 解决微信小程序setData性能问题
 2. 修复count-down组件change事件不触发问题
+
 ## 2.0.15（2021-12-21）
+
 ## uView正在参与开源中国的“年度最佳项目”评选，之前投过票的现在也可以投票，恳请同学们投一票，[点此帮助uView](https://www.oschina.net/project/top_cn_2021/?id=583)
 
 # uView2.0重磅发布，利剑出鞘，一统江湖
@@ -216,23 +257,30 @@
 8. 修复upload当设置maxSize时无效的问题
 9. 修复tabs lineWidth传入带单位的字符串的时候偏移量计算错误问题
 10. 修复rate组件在有padding的view内，显示的星星位置和可触摸区域不匹配，无法正常选中星星
+
 ## 2.0.13（2021-12-14）
+
 ## [点击加群交流反馈：364463526](https://jq.qq.com/?_chanwv=1027&k=mCxS3TGY)
 
 # uView2.0重磅发布，利剑出鞘，一统江湖
 
 1. 修复配置默认单位为rpx可能会导致自定义导航栏高度异常的问题
+
 ## 2.0.12（2021-12-14）
+
 ## [点击加群交流反馈：364463526](https://jq.qq.com/?_chanwv=1027&k=mCxS3TGY)
 
 # uView2.0重磅发布，利剑出鞘，一统江湖
 
 1. 修复tabs组件在vue环境下划线消失的问题
 2. 修复upload组件在安卓小程序无法选择视频的问题
-3. 添加uni.$u.config.unit配置，用于配置参数默认单位，详见：[默认单位配置](https://www.uviewui.com/components/setting.html#%E9%BB%98%E8%AE%A4%E5%8D%95%E4%BD%8D%E9%85%8D%E7%BD%AE)
+3.
+添加uni.$u.config.unit配置，用于配置参数默认单位，详见：[默认单位配置](https://www.uviewui.com/components/setting.html#%E9%BB%98%E8%AE%A4%E5%8D%95%E4%BD%8D%E9%85%8D%E7%BD%AE)
 4. 修复textarea组件在没绑定v-model时，字符统计不生效问题
 5. 修复nvue下控制是否出现滚动条失效问题
+
 ## 2.0.11（2021-12-13）
+
 ## [点击加群交流反馈：364463526](https://jq.qq.com/?_chanwv=1027&k=mCxS3TGY)
 
 # uView2.0重磅发布，利剑出鞘，一统江湖
@@ -249,7 +297,9 @@
 10. 解决u-notify手动关闭方法close()无效的问题
 11. input组件readonly不生效问题
 12. tag组件type参数为info不生效问题
+
 ## 2.0.10（2021-12-08）
+
 ## [点击加群交流反馈：364463526](https://jq.qq.com/?_chanwv=1027&k=mCxS3TGY)
 
 # uView2.0重磅发布，利剑出鞘，一统江湖
@@ -261,7 +311,9 @@
 5. 修复u-toast组件的icon属性配置不生效
 6. button的icon在特殊场景下的颜色优化
 7. IndexList优化，增加#
+
 ## 2.0.9（2021-12-01）
+
 ## [点击加群交流反馈：232041042](https://jq.qq.com/?_wv=1027&k=KnbeceDU)
 
 # uView2.0重磅发布，利剑出鞘，一统江湖
@@ -270,7 +322,9 @@
 2. 优化tabs组件对list值为空的判断，或者动态变化list时重新计算相关尺寸的问题
 3. 优化datetime-picker组件逻辑，让其后续打开的默认值为上一次的选中值，需要通过v-model绑定值才有效
 4. 修复upload内嵌在其他组件中，选择图片可能不会换行的问题
+
 ## 2.0.8（2021-12-01）
+
 ## [点击加群交流反馈：232041042](https://jq.qq.com/?_wv=1027&k=KnbeceDU)
 
 # uView2.0重磅发布，利剑出鞘，一统江湖
@@ -281,7 +335,9 @@
 4. tabs组件添加keyName参数用于配置从对象中读取的键名
 5. 处理text组件名字脱敏默认配置无效的问题
 6. 处理picker组件item文本太长换行问题
+
 ## 2.0.7（2021-11-30）
+
 ## [点击加群交流反馈：232041042](https://jq.qq.com/?_wv=1027&k=KnbeceDU)
 
 # uView2.0重磅发布，利剑出鞘，一统江湖
@@ -291,7 +347,9 @@
 3. 修复backtop组件mode参数在微信小程序无效的问题
 4. 处理Album的previewFullImage属性无效的问题
 5. 处理u-datetime-picker组件mode='time'在选择改变时间时，控制台报错的问题
+
 ## 2.0.6（2021-11-27）
+
 ## [点击加群交流反馈：232041042](https://jq.qq.com/?_wv=1027&k=KnbeceDU)
 
 # uView2.0重磅发布，利剑出鞘，一统江湖
@@ -300,16 +358,20 @@
 2. 处理popup组件圆角参数可能无效的问题。
 3. 处理tabs组件lineColor参数可能无效的问题。
 4. propgress组件在值很小时，显示异常的问题。
+
 ## 2.0.5（2021-11-25）
+
 ## [点击加群交流反馈：232041042](https://jq.qq.com/?_wv=1027&k=KnbeceDU)
 
 # uView2.0重磅发布，利剑出鞘，一统江湖
 
-1. calendar在vue下显示异常问题。 
+1. calendar在vue下显示异常问题。
 2. form组件labelPosition和errorType参数无效的问题
 3. input组件inputAlign无效的问题
 4. 其他一些修复
+
 ## 2.0.4（2021-11-23）
+
 ## [点击加群交流反馈：232041042](https://jq.qq.com/?_wv=1027&k=KnbeceDU)
 
 # uView2.0重磅发布，利剑出鞘，一统江湖
@@ -320,7 +382,9 @@
 3. tag组件的bgColor等参数无效的问题
 4. upload组件不换行的问题
 5. 其他的一些修复处理
+
 ## 2.0.3（2021-11-16）
+
 ## [点击加群交流反馈：1129077272](https://jq.qq.com/?_wv=1027&k=KnbeceDU)
 
 # uView2.0重磅发布，利剑出鞘，一统江湖
@@ -332,7 +396,9 @@
 5. 处理modal的confirm回调事件拼写错误问题
 6. 处理input组件@input事件参数错误问题
 7. 其他一些修复
+
 ## 2.0.2（2021-11-16）
+
 ## [点击加群交流反馈：1129077272](https://jq.qq.com/?_wv=1027&k=KnbeceDU)
 
 # uView2.0重磅发布，利剑出鞘，一统江湖
@@ -343,7 +409,9 @@
 4. 我们写了一份与1.x的对比指南，详见[对比1.x](https://www.uviewui.com/components/diff1.x.html)
 5. 修复input组件formatter参数缺失问题
 6. 优化loading-icon组件的scss写法问题，防止不兼容新版本scss
+
 ## 2.0.0(2020-11-15)
+
 ## [点击加群交流反馈：1129077272](https://jq.qq.com/?_wv=1027&k=KnbeceDU)
 
 # uView2.0重磅发布，利剑出鞘，一统江湖

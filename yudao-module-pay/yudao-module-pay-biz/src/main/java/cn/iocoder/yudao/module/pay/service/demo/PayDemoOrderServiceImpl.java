@@ -46,14 +46,14 @@ public class PayDemoOrderServiceImpl implements PayDemoOrderService {
 
     /**
      * 接入的实力应用编号
-     *
+     * <p>
      * 从 [支付管理 -> 应用信息] 里添加
      */
     private static final Long PAY_APP_ID = 7L;
 
     /**
      * 商品信息 Map
-     *
+     * <p>
      * key：商品编号
      * value：[商品名、商品价格]
      */
@@ -133,11 +133,11 @@ public class PayDemoOrderServiceImpl implements PayDemoOrderService {
 
     /**
      * 校验交易订单满足被支付的条件
-     *
+     * <p>
      * 1. 交易订单未支付
      * 2. 支付单已支付
      *
-     * @param id 交易订单编号
+     * @param id         交易订单编号
      * @param payOrderId 支付订单编号
      * @return 交易订单
      */

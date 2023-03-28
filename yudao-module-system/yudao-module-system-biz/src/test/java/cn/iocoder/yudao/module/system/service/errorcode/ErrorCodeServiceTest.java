@@ -84,28 +84,28 @@ public class ErrorCodeServiceTest extends BaseDbUnitTest {
 
         // 调用
         errorCodeService.deleteErrorCode(id);
-       // 校验数据不存在了
-       assertNull(errorCodeMapper.selectById(id));
+        // 校验数据不存在了
+        assertNull(errorCodeMapper.selectById(id));
     }
 
     @Test
     public void testGetErrorCodePage() {
-       // mock 数据
-       ErrorCodeDO dbErrorCode = initGetErrorCodePage();
-       // 准备参数
-       ErrorCodePageReqVO reqVO = new ErrorCodePageReqVO();
-       reqVO.setType(ErrorCodeTypeEnum.AUTO_GENERATION.getType());
-       reqVO.setApplicationName("tu");
-       reqVO.setCode(1);
-       reqVO.setMessage("ma");
-       reqVO.setCreateTime(buildBetweenTime(2020, 11, 1, 2020, 11, 30));
+        // mock 数据
+        ErrorCodeDO dbErrorCode = initGetErrorCodePage();
+        // 准备参数
+        ErrorCodePageReqVO reqVO = new ErrorCodePageReqVO();
+        reqVO.setType(ErrorCodeTypeEnum.AUTO_GENERATION.getType());
+        reqVO.setApplicationName("tu");
+        reqVO.setCode(1);
+        reqVO.setMessage("ma");
+        reqVO.setCreateTime(buildBetweenTime(2020, 11, 1, 2020, 11, 30));
 
-       // 调用
-       PageResult<ErrorCodeDO> pageResult = errorCodeService.getErrorCodePage(reqVO);
-       // 断言
-       assertEquals(1, pageResult.getTotal());
-       assertEquals(1, pageResult.getList().size());
-       assertPojoEquals(dbErrorCode, pageResult.getList().get(0));
+        // 调用
+        PageResult<ErrorCodeDO> pageResult = errorCodeService.getErrorCodePage(reqVO);
+        // 断言
+        assertEquals(1, pageResult.getTotal());
+        assertEquals(1, pageResult.getList().size());
+        assertPojoEquals(dbErrorCode, pageResult.getList().get(0));
     }
 
     /**
@@ -251,7 +251,7 @@ public class ErrorCodeServiceTest extends BaseDbUnitTest {
         // 准备参数
         ErrorCodeAutoGenerateReqDTO generateReqDTO = randomPojo(ErrorCodeAutoGenerateReqDTO.class,
                 o -> o.setCode(dbErrorCode.getCode()).setApplicationName(dbErrorCode.getApplicationName())
-                    .setMessage(dbErrorCode.getMessage()));
+                        .setMessage(dbErrorCode.getMessage()));
         // mock 方法
 
         // 调用

@@ -71,8 +71,11 @@ public interface ProductSpuConvert {
         }
         return spuVO;
     }
+
     AppProductSpuDetailRespVO convert02(ProductSpuDO spu);
+
     List<AppProductSpuDetailRespVO.Sku> convertList03(List<ProductSkuDO> skus);
+
     AppProductPropertyValueDetailRespVO convert03(ProductPropertyValueDetailRespBO propertyValue);
 
     PageResult<AppProductSpuPageItemRespVO> convertPage02(PageResult<ProductSpuDO> page);
@@ -101,8 +104,11 @@ public interface ProductSpuConvert {
         }
         return spuVO;
     }
+
     ProductSpuDetailRespVO convert03(ProductSpuDO spu);
+
     List<ProductSpuDetailRespVO.Sku> convertList04(List<ProductSkuDO> skus);
+
     ProductPropertyValueDetailRespVO convert04(ProductPropertyValueDetailRespBO propertyValue);
 
 }

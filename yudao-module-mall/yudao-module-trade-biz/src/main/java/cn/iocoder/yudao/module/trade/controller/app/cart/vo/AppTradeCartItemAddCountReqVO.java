@@ -10,7 +10,7 @@ import javax.validation.constraints.NotNull;
 @Data
 public class AppTradeCartItemAddCountReqVO {
 
-    @Schema(description = "商品 SKU 编号", required = true,example = "1024")
+    @Schema(description = "商品 SKU 编号", required = true, example = "1024")
     @NotNull(message = "商品 SKU 编号不能为空")
     private Long skuId;
 

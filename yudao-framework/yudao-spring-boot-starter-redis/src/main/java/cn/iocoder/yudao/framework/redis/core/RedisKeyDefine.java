@@ -61,7 +61,7 @@ public class RedisKeyDefine {
     private final KeyTypeEnum keyType;
     /**
      * Value 类型
-     *
+     * <p>
      * 如果是使用分布式锁，设置为 {@link java.util.concurrent.locks.Lock} 类型
      */
     private final Class<?> valueType;
@@ -100,7 +100,7 @@ public class RedisKeyDefine {
 
     /**
      * 格式化 Key
-     *
+     * <p>
      * 注意，内部采用 {@link String#format(String, Object...)} 实现
      *
      * @param args 格式化的参数

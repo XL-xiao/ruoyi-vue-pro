@@ -9,7 +9,7 @@ const WILDCARD = '*'
 function CamundaModdleExtension(eventBus) {
   const self = this
 
-  eventBus.on("moddleCopy.canCopyProperty", function(context) {
+  eventBus.on("moddleCopy.canCopyProperty", function (context) {
     const property = context.property,
       parent = context.parent
 
@@ -22,7 +22,7 @@ CamundaModdleExtension.$inject = ["eventBus"];
 /**
  * Check wether to disallow copying property.
  */
-CamundaModdleExtension.prototype.canCopyProperty = function(property, parent) {
+CamundaModdleExtension.prototype.canCopyProperty = function (property, parent) {
   // (1) check wether property is allowed in parent
   if (isObject(property) && !isAllowedInParent(property, parent)) {
     return false;
@@ -43,7 +43,7 @@ CamundaModdleExtension.prototype.canCopyProperty = function(property, parent) {
   }
 };
 
-CamundaModdleExtension.prototype.canHostInputOutput = function(parent) {
+CamundaModdleExtension.prototype.canHostInputOutput = function (parent) {
   // allowed in camunda:Connector
   const connector = getParent(parent, 'camunda:Connector')
 
@@ -67,7 +67,7 @@ CamundaModdleExtension.prototype.canHostInputOutput = function(parent) {
 
 };
 
-CamundaModdleExtension.prototype.canHostConnector = function(parent) {
+CamundaModdleExtension.prototype.canHostConnector = function (parent) {
   const serviceTaskLike = getParent(parent, 'camunda:ServiceTaskLike')
 
   if (is(serviceTaskLike, "bpmn:MessageEventDefinition")) {
@@ -78,7 +78,7 @@ CamundaModdleExtension.prototype.canHostConnector = function(parent) {
   return true;
 };
 
-CamundaModdleExtension.prototype.canHostIn = function(parent) {
+CamundaModdleExtension.prototype.canHostIn = function (parent) {
   const callActivity = getParent(parent, 'bpmn:CallActivity')
 
   if (callActivity) {
@@ -104,7 +104,7 @@ function is(element, type) {
 }
 
 function isAny(element, types) {
-  return some(types, function(t) {
+  return some(types, function (t) {
     return is(element, t);
   });
 }
@@ -136,7 +136,7 @@ function isAllowedInParent(property, parent) {
   }
 
   // (2) check wether property has parent of allowed type
-  return some(allowedIn, function(type) {
+  return some(allowedIn, function (type) {
     return getParent(parent, type);
   });
 }

@@ -1,6 +1,6 @@
 import request from '@/utils/request'
-import { getRefreshToken } from '@/utils/auth'
 import service from '@/utils/request'
+import {getRefreshToken} from '@/utils/auth'
 
 // 登录方法
 export function login(username, password, captchaVerification, socialType, socialCode, socialState) {
@@ -99,7 +99,7 @@ export function getAuthorize(clientId) {
 }
 
 export function authorize(responseType, clientId, redirectUri, state,
-  autoApprove, checkedScopes, uncheckedScopes) {
+                          autoApprove, checkedScopes, uncheckedScopes) {
   // 构建 scopes
   const scopes = {}
   for (const scope of checkedScopes) {

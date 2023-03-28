@@ -30,10 +30,10 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.verify;
 
 /**
-* {@link MailTemplateServiceImpl} 的单元测试类
-*
-* @author 芋道源码
-*/
+ * {@link MailTemplateServiceImpl} 的单元测试类
+ *
+ * @author 芋道源码
+ */
 @Import(MailTemplateServiceImpl.class)
 public class MailTemplateServiceImplTest extends BaseDbUnitTest {
 
@@ -129,39 +129,39 @@ public class MailTemplateServiceImplTest extends BaseDbUnitTest {
 
     @Test
     public void testGetMailTemplatePage() {
-       // mock 数据
-       MailTemplateDO dbMailTemplate = randomPojo(MailTemplateDO.class, o -> { // 等会查询到
-           o.setName("源码");
-           o.setCode("test_01");
-           o.setAccountId(1L);
-           o.setStatus(CommonStatusEnum.ENABLE.getStatus());
-           o.setCreateTime(buildTime(2023, 2, 3));
-       });
-       mailTemplateMapper.insert(dbMailTemplate);
-       // 测试 name 不匹配
-       mailTemplateMapper.insert(cloneIgnoreId(dbMailTemplate, o -> o.setName("芋道")));
-       // 测试 code 不匹配
-       mailTemplateMapper.insert(cloneIgnoreId(dbMailTemplate, o -> o.setCode("test_02")));
-       // 测试 accountId 不匹配
-       mailTemplateMapper.insert(cloneIgnoreId(dbMailTemplate, o -> o.setAccountId(2L)));
-       // 测试 status 不匹配
-       mailTemplateMapper.insert(cloneIgnoreId(dbMailTemplate, o -> o.setStatus(CommonStatusEnum.DISABLE.getStatus())));
-       // 测试 createTime 不匹配
-       mailTemplateMapper.insert(cloneIgnoreId(dbMailTemplate, o -> o.setCreateTime(buildTime(2023, 1, 5))));
-       // 准备参数
-       MailTemplatePageReqVO reqVO = new MailTemplatePageReqVO();
-       reqVO.setName("源");
-       reqVO.setCode("est_01");
-       reqVO.setAccountId(1L);
-       reqVO.setStatus(CommonStatusEnum.ENABLE.getStatus());
-       reqVO.setCreateTime(buildBetweenTime(2023, 2, 1, 2023, 2, 5));
+        // mock 数据
+        MailTemplateDO dbMailTemplate = randomPojo(MailTemplateDO.class, o -> { // 等会查询到
+            o.setName("源码");
+            o.setCode("test_01");
+            o.setAccountId(1L);
+            o.setStatus(CommonStatusEnum.ENABLE.getStatus());
+            o.setCreateTime(buildTime(2023, 2, 3));
+        });
+        mailTemplateMapper.insert(dbMailTemplate);
+        // 测试 name 不匹配
+        mailTemplateMapper.insert(cloneIgnoreId(dbMailTemplate, o -> o.setName("芋道")));
+        // 测试 code 不匹配
+        mailTemplateMapper.insert(cloneIgnoreId(dbMailTemplate, o -> o.setCode("test_02")));
+        // 测试 accountId 不匹配
+        mailTemplateMapper.insert(cloneIgnoreId(dbMailTemplate, o -> o.setAccountId(2L)));
+        // 测试 status 不匹配
+        mailTemplateMapper.insert(cloneIgnoreId(dbMailTemplate, o -> o.setStatus(CommonStatusEnum.DISABLE.getStatus())));
+        // 测试 createTime 不匹配
+        mailTemplateMapper.insert(cloneIgnoreId(dbMailTemplate, o -> o.setCreateTime(buildTime(2023, 1, 5))));
+        // 准备参数
+        MailTemplatePageReqVO reqVO = new MailTemplatePageReqVO();
+        reqVO.setName("源");
+        reqVO.setCode("est_01");
+        reqVO.setAccountId(1L);
+        reqVO.setStatus(CommonStatusEnum.ENABLE.getStatus());
+        reqVO.setCreateTime(buildBetweenTime(2023, 2, 1, 2023, 2, 5));
 
-       // 调用
-       PageResult<MailTemplateDO> pageResult = mailTemplateService.getMailTemplatePage(reqVO);
-       // 断言
-       assertEquals(1, pageResult.getTotal());
-       assertEquals(1, pageResult.getList().size());
-       assertPojoEquals(dbMailTemplate, pageResult.getList().get(0));
+        // 调用
+        PageResult<MailTemplateDO> pageResult = mailTemplateService.getMailTemplatePage(reqVO);
+        // 断言
+        assertEquals(1, pageResult.getTotal());
+        assertEquals(1, pageResult.getList().size());
+        assertPojoEquals(dbMailTemplate, pageResult.getList().get(0));
     }
 
     @Test

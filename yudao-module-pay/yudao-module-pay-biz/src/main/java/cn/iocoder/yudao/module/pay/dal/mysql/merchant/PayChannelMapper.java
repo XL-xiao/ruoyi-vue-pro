@@ -62,7 +62,7 @@ public interface PayChannelMapper extends BaseMapperX<PayChannelDO> {
      * 根据条件获取渠道
      *
      * @param merchantId 商户编号
-     * @param appI      应用编号
+     * @param appI       应用编号
      * @param code       渠道编码
      * @return 数量
      */
@@ -75,13 +75,14 @@ public interface PayChannelMapper extends BaseMapperX<PayChannelDO> {
     }
 
     // TODO @aquan：select 命名
+
     /**
      * 根据支付应用ID集合获得支付渠道列表
      *
      * @param appIds 应用编号集合
      * @return 支付渠道列表
      */
-    default List<PayChannelDO> getChannelListByAppIds(Collection<Long> appIds){
+    default List<PayChannelDO> getChannelListByAppIds(Collection<Long> appIds) {
         return this.selectList(new QueryWrapper<PayChannelDO>().lambda()
                 .in(PayChannelDO::getAppId, appIds));
     }

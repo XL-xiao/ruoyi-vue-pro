@@ -104,9 +104,9 @@ public class MpMenuServiceImpl implements MpMenuService {
     /**
      * 创建菜单，并存储到数据库
      *
-     * @param wxMenu 菜单信息
+     * @param wxMenu     菜单信息
      * @param parentMenu 父菜单
-     * @param account 公众号账号
+     * @param account    公众号账号
      * @return 创建后的菜单
      */
     private MpMenuDO createMenu(MpMenuSaveReqVO.Menu wxMenu, MpMenuDO parentMenu, MpAccountDO account) {

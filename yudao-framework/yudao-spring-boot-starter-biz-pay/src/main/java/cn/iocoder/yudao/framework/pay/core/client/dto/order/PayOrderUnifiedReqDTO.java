@@ -75,16 +75,16 @@ public class PayOrderUnifiedReqDTO {
     // ========== 拓展参数 ==========
     /**
      * 支付渠道的额外参数
-     *
+     * <p>
      * 例如说，微信公众号需要传递 openid 参数
      */
     private Map<String, String> channelExtras;
 
     /**
      * 展示模式
-     *
+     * <p>
      * 如果不传递，则每个支付渠道使用默认的方式
-     *
+     * <p>
      * 枚举 {@link PayDisplayModeEnum}
      */
     private String displayMode;

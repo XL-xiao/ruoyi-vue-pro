@@ -6,7 +6,7 @@ import dialogDragHeight from './dialog/dragHeight'
 import clipboard from './module/clipboard'
 
 // Vue：自定义指令：https://v2.cn.vuejs.org/v2/guide/custom-directive.html
-const install = function(Vue) {
+const install = function (Vue) {
   Vue.directive('hasRole', hasRole)
   Vue.directive('hasPermi', hasPermi)
   Vue.directive('clipboard', clipboard)

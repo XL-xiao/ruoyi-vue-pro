@@ -1,4 +1,5 @@
 package cn.iocoder.yudao.module.pay.controller.admin.merchant.vo.channel;
+
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
 

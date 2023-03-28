@@ -32,7 +32,8 @@ public interface PayClient {
 
     /**
      * 调用支付渠道，进行退款
-     * @param reqDTO  统一退款请求信息
+     *
+     * @param reqDTO 统一退款请求信息
      * @return 各支付渠道的统一返回结果
      */
     PayRefundUnifiedRespDTO unifiedRefund(PayRefundUnifiedReqDTO reqDTO);
@@ -42,8 +43,8 @@ public interface PayClient {
      *
      * @param rawNotify 通知内容
      * @return 回调对象
-     *         1. {@link PayRefundNotifyRespDTO} 退款通知
-     *         2. {@link PayOrderNotifyRespDTO} 支付通知
+     * 1. {@link PayRefundNotifyRespDTO} 退款通知
+     * 2. {@link PayOrderNotifyRespDTO} 支付通知
      */
     default Object parseNotify(PayNotifyReqDTO rawNotify) {
         throw new UnsupportedOperationException("未实现 parseNotify 方法！");

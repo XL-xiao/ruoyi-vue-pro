@@ -24,10 +24,10 @@ import static cn.iocoder.yudao.framework.common.util.object.ObjectUtils.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
-* {@link SeckillTimeServiceImpl} 的单元测试类
-*
-* @author 芋道源码
-*/
+ * {@link SeckillTimeServiceImpl} 的单元测试类
+ *
+ * @author 芋道源码
+ */
 @Import(SeckillTimeServiceImpl.class)
 @Disabled // TODO 芋艿：未来开启
 public class SeckillTimeServiceImplTest extends BaseDbUnitTest {
@@ -42,7 +42,7 @@ public class SeckillTimeServiceImplTest extends BaseDbUnitTest {
     private ObjectMapper objectMapper;
 
     @Test
-    public void testJacksonSerializ(){
+    public void testJacksonSerializ() {
 
         // 准备参数
         SeckillTimeCreateReqVO reqVO = randomPojo(SeckillTimeCreateReqVO.class);
@@ -107,8 +107,8 @@ public class SeckillTimeServiceImplTest extends BaseDbUnitTest {
 
         // 调用
         seckillTimeService.deleteSeckillTime(id);
-       // 校验数据不存在了
-       assertNull(seckillTimeMapper.selectById(id));
+        // 校验数据不存在了
+        assertNull(seckillTimeMapper.selectById(id));
     }
 
     @Test
@@ -123,7 +123,7 @@ public class SeckillTimeServiceImplTest extends BaseDbUnitTest {
     @Test
     @Disabled  // TODO 请修改 null 为需要的值，然后删除 @Disabled 注解
     public void testGetSeckillTimePage() {
-       // mock 数据
+        // mock 数据
 //       SeckillTimeDO dbSeckillTime = randomPojo(SeckillTimeDO.class, o -> { // 等会查询到
 //           o.setName(null);
 //           o.setStartTime(null);
@@ -157,23 +157,23 @@ public class SeckillTimeServiceImplTest extends BaseDbUnitTest {
     @Test
     @Disabled  // TODO 请修改 null 为需要的值，然后删除 @Disabled 注解
     public void testGetSeckillTimeList() {
-       // mock 数据
-       SeckillTimeDO dbSeckillTime = randomPojo(SeckillTimeDO.class, o -> { // 等会查询到
-           o.setName(null);
-           o.setStartTime(null);
-           o.setEndTime(null);
-           o.setCreateTime(null);
-       });
-       seckillTimeMapper.insert(dbSeckillTime);
-       // 测试 name 不匹配
-       seckillTimeMapper.insert(cloneIgnoreId(dbSeckillTime, o -> o.setName(null)));
-       // 测试 startTime 不匹配
-       seckillTimeMapper.insert(cloneIgnoreId(dbSeckillTime, o -> o.setStartTime(null)));
-       // 测试 endTime 不匹配
-       seckillTimeMapper.insert(cloneIgnoreId(dbSeckillTime, o -> o.setEndTime(null)));
-       // 测试 createTime 不匹配
-       seckillTimeMapper.insert(cloneIgnoreId(dbSeckillTime, o -> o.setCreateTime(null)));
-       // 准备参数
+        // mock 数据
+        SeckillTimeDO dbSeckillTime = randomPojo(SeckillTimeDO.class, o -> { // 等会查询到
+            o.setName(null);
+            o.setStartTime(null);
+            o.setEndTime(null);
+            o.setCreateTime(null);
+        });
+        seckillTimeMapper.insert(dbSeckillTime);
+        // 测试 name 不匹配
+        seckillTimeMapper.insert(cloneIgnoreId(dbSeckillTime, o -> o.setName(null)));
+        // 测试 startTime 不匹配
+        seckillTimeMapper.insert(cloneIgnoreId(dbSeckillTime, o -> o.setStartTime(null)));
+        // 测试 endTime 不匹配
+        seckillTimeMapper.insert(cloneIgnoreId(dbSeckillTime, o -> o.setEndTime(null)));
+        // 测试 createTime 不匹配
+        seckillTimeMapper.insert(cloneIgnoreId(dbSeckillTime, o -> o.setCreateTime(null)));
+        // 准备参数
 //       SeckillTimeExportReqVO reqVO = new SeckillTimeExportReqVO();
 //       reqVO.setName(null);
 //       reqVO.setStartTime((new LocalTime[]{}));

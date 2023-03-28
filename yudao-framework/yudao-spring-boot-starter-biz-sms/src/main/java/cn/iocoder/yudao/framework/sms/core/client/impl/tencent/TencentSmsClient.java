@@ -189,6 +189,7 @@ public class TencentSmsClient extends AbstractSmsClient {
 
     /**
      * 封装查询模版审核状态请求
+     *
      * @param apiTemplateId api 的模版 id
      * @return 查询模版审核状态请求
      */

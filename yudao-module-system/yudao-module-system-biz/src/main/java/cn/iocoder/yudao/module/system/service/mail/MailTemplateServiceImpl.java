@@ -53,7 +53,7 @@ public class MailTemplateServiceImpl implements MailTemplateService {
     /**
      * 邮件模板缓存
      * key：邮件模版标识 {@link MailTemplateDO#getCode()}
-     *
+     * <p>
      * 这里声明 volatile 修饰的原因是，每次刷新时，直接修改指向
      */
     @Getter
@@ -89,7 +89,7 @@ public class MailTemplateServiceImpl implements MailTemplateService {
         // 校验是否存在
         validateMailTemplateExists(updateReqVO.getId());
         // 校验 code 是否唯一
-        validateCodeUnique(updateReqVO.getId(),updateReqVO.getCode());
+        validateCodeUnique(updateReqVO.getId(), updateReqVO.getCode());
 
         // 更新
         MailTemplateDO updateObj = MailTemplateConvert.INSTANCE.convert(updateReqVO)
@@ -130,7 +130,9 @@ public class MailTemplateServiceImpl implements MailTemplateService {
     }
 
     @Override
-    public MailTemplateDO getMailTemplate(Long id) {return mailTemplateMapper.selectById(id);}
+    public MailTemplateDO getMailTemplate(Long id) {
+        return mailTemplateMapper.selectById(id);
+    }
 
     @Override
     public PageResult<MailTemplateDO> getMailTemplatePage(MailTemplatePageReqVO pageReqVO) {
@@ -138,7 +140,9 @@ public class MailTemplateServiceImpl implements MailTemplateService {
     }
 
     @Override
-    public List<MailTemplateDO> getMailTemplateList() {return mailTemplateMapper.selectList();}
+    public List<MailTemplateDO> getMailTemplateList() {
+        return mailTemplateMapper.selectList();
+    }
 
     @Override
     public MailTemplateDO getMailTemplateByCodeFromCache(String code) {

@@ -29,6 +29,7 @@ import static org.mockito.Mockito.eq;
 import static org.mockito.Mockito.when;
 
 // TODO @芋艿：单测的 review，等逻辑都达成一致后
+
 /**
  * {@link MemberUserServiceImpl} 的单元测试类
  *
@@ -58,7 +59,7 @@ public class MemberUserServiceImplTest extends BaseDbAndRedisUnitTest {
     private FileApi fileApi;
 
     @Test
-    public void testUpdateNickName_success(){
+    public void testUpdateNickName_success() {
         // mock 数据
         MemberUserDO userDO = randomUserDO();
         userMapper.insert(userDO);
@@ -67,11 +68,11 @@ public class MemberUserServiceImplTest extends BaseDbAndRedisUnitTest {
         String newNickName = randomString();
 
         // 调用接口修改昵称
-        memberUserService.updateUserNickname(userDO.getId(),newNickName);
+        memberUserService.updateUserNickname(userDO.getId(), newNickName);
         // 查询新修改后的昵称
         String nickname = memberUserService.getUser(userDO.getId()).getNickname();
         // 断言
-        assertEquals(newNickName,nickname);
+        assertEquals(newNickName, nickname);
     }
 
     @Test
@@ -94,7 +95,7 @@ public class MemberUserServiceImplTest extends BaseDbAndRedisUnitTest {
     }
 
     @Test
-    public void updateMobile_success(){
+    public void updateMobile_success() {
         // mock数据
         String oldMobile = randomNumbers(11);
         MemberUserDO userDO = randomUserDO();
@@ -119,9 +120,9 @@ public class MemberUserServiceImplTest extends BaseDbAndRedisUnitTest {
         reqVO.setCode(newCode);
         reqVO.setOldMobile(oldMobile);
         reqVO.setOldCode(oldCode);
-        memberUserService.updateUserMobile(userDO.getId(),reqVO);
+        memberUserService.updateUserMobile(userDO.getId(), reqVO);
 
-        assertEquals(memberUserService.getUser(userDO.getId()).getMobile(),newMobile);
+        assertEquals(memberUserService.getUser(userDO.getId()).getMobile(), newMobile);
     }
 
     // ========== 随机对象 ==========

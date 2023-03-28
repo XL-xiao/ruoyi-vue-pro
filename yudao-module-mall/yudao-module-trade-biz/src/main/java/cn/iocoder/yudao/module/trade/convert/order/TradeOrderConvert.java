@@ -75,7 +75,7 @@ public interface TradeOrderConvert {
         });
     }
 
-    @Mapping(source = "userId" , target = "userId")
+    @Mapping(source = "userId", target = "userId")
     PriceCalculateReqDTO convert(AppTradeOrderCreateReqVO createReqVO, Long userId);
 
     @Mappings({
@@ -83,6 +83,7 @@ public interface TradeOrderConvert {
             @Mapping(source = "count", target = "incrCount"),
     })
     ProductSkuUpdateStockReqDTO.Item convert(TradeOrderItemDO bean);
+
     List<ProductSkuUpdateStockReqDTO.Item> convertList(List<TradeOrderItemDO> list);
 
     default PayOrderCreateReqDTO convert(TradeOrderDO tradeOrderDO, List<TradeOrderItemDO> tradeOrderItemDOs,
@@ -132,7 +133,7 @@ public interface TradeOrderConvert {
                     properties.forEach(property -> {
                         ProductPropertyValueDetailRespDTO propertyValueDetail = propertyValueDetailMap.get(property.getValueId());
                         if (propertyValueDetail == null) {
-                           return;
+                            return;
                         }
                         item.getProperties().add(convert(propertyValueDetail));
                     });
@@ -144,7 +145,9 @@ public interface TradeOrderConvert {
         });
         return new PageResult<>(orderVOs, pageResult.getTotal());
     }
+
     TradeOrderPageItemRespVO convert(TradeOrderDO order, List<TradeOrderItemDO> items);
+
     ProductPropertyValueDetailRespVO convert(ProductPropertyValueDetailRespDTO bean);
 
     default TradeOrderDetailRespVO convert(TradeOrderDO order, List<TradeOrderItemDO> orderItems,
@@ -174,7 +177,9 @@ public interface TradeOrderConvert {
         orderVO.setUser(convert(user));
         return orderVO;
     }
+
     TradeOrderDetailRespVO convert2(TradeOrderDO order, List<TradeOrderItemDO> items);
+
     MemberUserRespVO convert(MemberUserRespDTO bean);
 
     default PageResult<AppTradeOrderPageItemRespVO> convertPage02(PageResult<TradeOrderDO> pageResult, List<TradeOrderItemDO> orderItems,
@@ -208,7 +213,9 @@ public interface TradeOrderConvert {
         });
         return new PageResult<>(orderVOs, pageResult.getTotal());
     }
+
     AppTradeOrderPageItemRespVO convert02(TradeOrderDO order, List<TradeOrderItemDO> items);
+
     AppProductPropertyValueDetailRespVO convert02(ProductPropertyValueDetailRespDTO bean);
 
     default AppTradeOrderDetailRespVO convert02(TradeOrderDO order, List<TradeOrderItemDO> orderItems,
@@ -236,6 +243,7 @@ public interface TradeOrderConvert {
         orderVO.setReceiverAreaName(AreaUtils.format(order.getReceiverAreaId()));
         return orderVO;
     }
+
     AppTradeOrderDetailRespVO convert3(TradeOrderDO order, List<TradeOrderItemDO> items);
 
 }

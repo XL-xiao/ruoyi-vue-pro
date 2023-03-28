@@ -65,7 +65,7 @@ public class SmsTemplateServiceImpl implements SmsTemplateService {
     /**
      * 短信模板缓存
      * key：短信模板编码 {@link SmsTemplateDO#getCode()}
-     *
+     * <p>
      * 这里声明 volatile 修饰的原因是，每次刷新时，直接修改指向
      */
     @Getter // 为了方便测试，这里提供 getter 方法
@@ -213,7 +213,7 @@ public class SmsTemplateServiceImpl implements SmsTemplateService {
     /**
      * 校验 API 短信平台的模板是否有效
      *
-     * @param channelId 渠道编号
+     * @param channelId     渠道编号
      * @param apiTemplateId API 模板编号
      */
     @VisibleForTesting

@@ -1,5 +1,5 @@
 /* eslint-disable */
-var clone = (function() {
+var clone = (function () {
   'use strict';
 
   function _instanceof(obj, type) {
@@ -9,24 +9,27 @@ var clone = (function() {
   var nativeMap;
   try {
     nativeMap = Map;
-  } catch(_) {
+  } catch (_) {
     // maybe a reference error because no `Map`. Give it a dummy value that no
     // value will ever be an instanceof.
-    nativeMap = function() {};
+    nativeMap = function () {
+    };
   }
 
   var nativeSet;
   try {
     nativeSet = Set;
-  } catch(_) {
-    nativeSet = function() {};
+  } catch (_) {
+    nativeSet = function () {
+    };
   }
 
   var nativePromise;
   try {
     nativePromise = Promise;
-  } catch(_) {
-    nativePromise = function() {};
+  } catch (_) {
+    nativePromise = function () {
+    };
   }
 
   /**
@@ -91,9 +94,9 @@ var clone = (function() {
         child = new nativeSet();
       } else if (_instanceof(parent, nativePromise)) {
         child = new nativePromise(function (resolve, reject) {
-          parent.then(function(value) {
+          parent.then(function (value) {
             resolve(_clone(value, depth - 1));
-          }, function(err) {
+          }, function (err) {
             reject(_clone(err, depth - 1));
           });
         });
@@ -120,8 +123,7 @@ var clone = (function() {
         if (typeof prototype == 'undefined') {
           proto = Object.getPrototypeOf(parent);
           child = Object.create(proto);
-        }
-        else {
+        } else {
           child = Object.create(prototype);
           proto = prototype;
         }
@@ -138,14 +140,14 @@ var clone = (function() {
       }
 
       if (_instanceof(parent, nativeMap)) {
-        parent.forEach(function(value, key) {
+        parent.forEach(function (value, key) {
           var keyChild = _clone(key, depth - 1);
           var valueChild = _clone(value, depth - 1);
           child.set(keyChild, valueChild);
         });
       }
       if (_instanceof(parent, nativeSet)) {
-        parent.forEach(function(value) {
+        parent.forEach(function (value) {
           var entryChild = _clone(value, depth - 1);
           child.add(entryChild);
         });
@@ -164,7 +166,7 @@ var clone = (function() {
             continue;
           }
           child[i] = _clone(parent[i], depth - 1);
-        } catch(e){
+        } catch (e) {
           if (e instanceof TypeError) {
             // when in strict mode, TypeError will be thrown if child[i] property only has a getter
             // we can't do anything about this, other than inform the user that this property cannot be set.
@@ -222,7 +224,8 @@ var clone = (function() {
     if (parent === null)
       return null;
 
-    var c = function () {};
+    var c = function () {
+    };
     c.prototype = parent;
     return new c();
   };
@@ -232,21 +235,25 @@ var clone = (function() {
   function __objToStr(o) {
     return Object.prototype.toString.call(o);
   }
+
   clone.__objToStr = __objToStr;
 
   function __isDate(o) {
     return typeof o === 'object' && __objToStr(o) === '[object Date]';
   }
+
   clone.__isDate = __isDate;
 
   function __isArray(o) {
     return typeof o === 'object' && __objToStr(o) === '[object Array]';
   }
+
   clone.__isArray = __isArray;
 
   function __isRegExp(o) {
     return typeof o === 'object' && __objToStr(o) === '[object RegExp]';
   }
+
   clone.__isRegExp = __isRegExp;
 
   function __getRegExpFlags(re) {
@@ -256,6 +263,7 @@ var clone = (function() {
     if (re.multiline) flags += 'm';
     return flags;
   }
+
   clone.__getRegExpFlags = __getRegExpFlags;
 
   return clone;

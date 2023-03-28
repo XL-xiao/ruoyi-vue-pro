@@ -14,9 +14,9 @@ public class PayProperties {
 
     /**
      * 回调地址
-     *
+     * <p>
      * 实际上，对应的 PayNotifyController 的 notifyCallback 方法的 URL
-     *
+     * <p>
      * 注意，支付渠道统一回调到 payNotifyUrl 地址，由支付模块统一处理；然后，自己的支付模块，在回调 PayAppDO.payNotifyUrl 地址
      */
     @NotEmpty(message = "回调地址不能为空")
@@ -25,7 +25,7 @@ public class PayProperties {
 
     /**
      * 回跳地址
-     *
+     * <p>
      * 实际上，对应的 PayNotifyController 的 returnCallback 方法的 URL
      */
     @URL(message = "回跳地址的格式必须是 URL")

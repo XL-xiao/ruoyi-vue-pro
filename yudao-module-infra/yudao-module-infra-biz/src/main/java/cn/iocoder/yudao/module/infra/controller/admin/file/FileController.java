@@ -61,7 +61,7 @@ public class FileController {
     @GetMapping("/{configId}/get/**")
     @PermitAll
     @Operation(summary = "下载文件")
-    @Parameter(name = "configId", description = "配置编号",  required = true)
+    @Parameter(name = "configId", description = "配置编号", required = true)
     public void getFileContent(HttpServletRequest request,
                                HttpServletResponse response,
                                @PathVariable("configId") Long configId) throws Exception {

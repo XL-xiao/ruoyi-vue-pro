@@ -16,7 +16,7 @@ import java.nio.charset.StandardCharsets;
 
 /**
  * OAuth 2.0 客户端
- *
+ * <p>
  * 对应调用 OAuth2OpenController 接口
  */
 @Component
@@ -26,7 +26,7 @@ public class OAuth2Client {
 
     /**
      * 租户编号
-     *
+     * <p>
      * 默认使用 1；如果使用别的租户，可以调整
      */
     public static final Long TENANT_ID = 1L;
@@ -35,7 +35,7 @@ public class OAuth2Client {
     private static final String CLIENT_SECRET = "test";
 
 
-//    @Resource // 可优化，注册一个 RestTemplate Bean，然后注入
+    //    @Resource // 可优化，注册一个 RestTemplate Bean，然后注入
     private final RestTemplate restTemplate = new RestTemplate();
 
     /**
@@ -59,7 +59,8 @@ public class OAuth2Client {
                 BASE_URL + "/check-token",
                 HttpMethod.POST,
                 new HttpEntity<>(body, headers),
-                new ParameterizedTypeReference<CommonResult<OAuth2CheckTokenRespDTO>>() {}); // 解决 CommonResult 的泛型丢失
+                new ParameterizedTypeReference<CommonResult<OAuth2CheckTokenRespDTO>>() {
+                }); // 解决 CommonResult 的泛型丢失
         Assert.isTrue(exchange.getStatusCode().is2xxSuccessful(), "响应必须是 200 成功");
         return exchange.getBody();
     }
@@ -86,7 +87,8 @@ public class OAuth2Client {
                 BASE_URL + "/token",
                 HttpMethod.POST,
                 new HttpEntity<>(body, headers),
-                new ParameterizedTypeReference<CommonResult<OAuth2AccessTokenRespDTO>>() {}); // 解决 CommonResult 的泛型丢失
+                new ParameterizedTypeReference<CommonResult<OAuth2AccessTokenRespDTO>>() {
+                }); // 解决 CommonResult 的泛型丢失
         Assert.isTrue(exchange.getStatusCode().is2xxSuccessful(), "响应必须是 200 成功");
         return exchange.getBody();
     }
@@ -112,7 +114,8 @@ public class OAuth2Client {
                 BASE_URL + "/token",
                 HttpMethod.DELETE,
                 new HttpEntity<>(body, headers),
-                new ParameterizedTypeReference<CommonResult<Boolean>>() {}); // 解决 CommonResult 的泛型丢失
+                new ParameterizedTypeReference<CommonResult<Boolean>>() {
+                }); // 解决 CommonResult 的泛型丢失
         Assert.isTrue(exchange.getStatusCode().is2xxSuccessful(), "响应必须是 200 成功");
         return exchange.getBody();
     }

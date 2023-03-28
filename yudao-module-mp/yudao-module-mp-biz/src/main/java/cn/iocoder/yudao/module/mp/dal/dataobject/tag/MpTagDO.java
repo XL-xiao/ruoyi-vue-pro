@@ -37,20 +37,20 @@ public class MpTagDO extends BaseDO {
     private String name;
     /**
      * 此标签下粉丝数
-     *
+     * <p>
      * 冗余：{@link WxUserTag#getCount()} 字段，需要管理员点击【同步】后，更新该字段
      */
     private Integer count;
 
     /**
      * 公众号账号的编号
-     *
+     * <p>
      * 关联 {@link MpAccountDO#getId()}
      */
     private Long accountId;
     /**
      * 公众号 appId
-     *
+     * <p>
      * 冗余 {@link MpAccountDO#getAppId()}
      */
     private String appId;

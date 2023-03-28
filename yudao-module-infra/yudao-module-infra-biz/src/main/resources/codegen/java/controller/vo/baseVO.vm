@@ -4,23 +4,23 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
 import java.util.*;
 #foreach ($column in $columns)
-#if (${column.javaType} == "BigDecimal")
-import java.math.BigDecimal;
-#end
-#if (${column.javaType} == "LocalDateTime")
-import java.time.LocalDateTime;
-#end
+    #if (${column.javaType} == "BigDecimal")
+    import java.math.BigDecimal;
+    #end
+    #if (${column.javaType} == "LocalDateTime")
+    import java.time.LocalDateTime;
+    #end
 #end
 import javax.validation.constraints.*;
 ## 处理 Date 字段的引入
 #foreach ($column in $columns)
-#if (${column.createOperation} && ${column.updateOperation} && ${column.listOperationResult}
+    #if (${column.createOperation} && ${column.updateOperation} && ${column.listOperationResult}
     && ${column.javaType} == "LocalDateTime")## 时间类型
-import org.springframework.format.annotation.DateTimeFormat;
+    import org.springframework.format.annotation.DateTimeFormat;
 
-import static ${DateUtilsClassName}.FORMAT_YEAR_MONTH_DAY_HOUR_MINUTE_SECOND;
-#break
-#end
+    import static ${DateUtilsClassName}.FORMAT_YEAR_MONTH_DAY_HOUR_MINUTE_SECOND;
+        #break
+    #end
 #end
 
 /**
@@ -31,9 +31,9 @@ import static ${DateUtilsClassName}.FORMAT_YEAR_MONTH_DAY_HOUR_MINUTE_SECOND;
 public class ${sceneEnum.prefixClass}${table.className}BaseVO {
 
 #foreach ($column in $columns)
-#if (${column.createOperation} && ${column.updateOperation} && ${column.listOperationResult})##通用操作
-    #parse("codegen/java/controller/vo/_column.vm")
+    #if (${column.createOperation} && ${column.updateOperation} && ${column.listOperationResult})##通用操作
+        #parse("codegen/java/controller/vo/_column.vm")
 
-#end
+    #end
 #end
 }

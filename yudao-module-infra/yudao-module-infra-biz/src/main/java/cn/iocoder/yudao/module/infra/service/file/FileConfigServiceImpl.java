@@ -139,7 +139,7 @@ public class FileConfigServiceImpl implements FileConfigService {
         // 校验存在
         FileConfigDO config = validateFileConfigExists(id);
         if (Boolean.TRUE.equals(config.getMaster())) {
-             throw exception(FILE_CONFIG_DELETE_FAIL_MASTER);
+            throw exception(FILE_CONFIG_DELETE_FAIL_MASTER);
         }
         // 删除
         fileConfigMapper.deleteById(id);

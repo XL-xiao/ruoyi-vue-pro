@@ -72,8 +72,8 @@ public class SeckillActivityController {
         if (seckillActivity == null) {
             return success(null);
         }
-        List<SeckillProductDO> seckillProducts =  seckillActivityService.getSeckillProductListByActivityId(id);
-        return success(SeckillActivityConvert.INSTANCE.convert(seckillActivity,seckillProducts));
+        List<SeckillProductDO> seckillProducts = seckillActivityService.getSeckillProductListByActivityId(id);
+        return success(SeckillActivityConvert.INSTANCE.convert(seckillActivity, seckillProducts));
     }
 
     @GetMapping("/list")

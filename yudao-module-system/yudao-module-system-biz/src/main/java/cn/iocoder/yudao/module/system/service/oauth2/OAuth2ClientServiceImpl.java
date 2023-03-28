@@ -43,7 +43,7 @@ public class OAuth2ClientServiceImpl implements OAuth2ClientService {
     /**
      * 客户端缓存
      * key：客户端编号 {@link OAuth2ClientDO#getClientId()} ()}
-     *
+     * <p>
      * 这里声明 volatile 修饰的原因是，每次刷新时，直接修改指向
      */
     @Getter // 解决单测

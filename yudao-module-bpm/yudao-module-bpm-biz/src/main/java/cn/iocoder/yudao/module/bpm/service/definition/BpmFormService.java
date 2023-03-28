@@ -18,7 +18,7 @@ import java.util.Map;
 /**
  * 动态表单 Service 接口
  *
- * @author  @风里雾里
+ * @author @风里雾里
  */
 public interface BpmFormService {
 
@@ -91,9 +91,9 @@ public interface BpmFormService {
     /**
      * 校验流程表单已配置
      *
-     * @param configStr  configStr 字段
+     * @param configStr configStr 字段
      * @return 流程表单
      */
-    BpmFormDO checkFormConfig(String  configStr);
+    BpmFormDO checkFormConfig(String configStr);
 
 }

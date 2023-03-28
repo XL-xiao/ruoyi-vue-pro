@@ -1,5 +1,5 @@
-import { getUserInfo } from '@/api/user'
-import { passwordLogin, smsLogin, weixinMiniAppLogin, logout } from '@/api/auth'
+import {getUserInfo} from '@/api/user'
+import {logout, passwordLogin, smsLogin, weixinMiniAppLogin} from '@/api/auth'
 
 const AccessTokenKey = 'ACCESS_TOKEN'
 const RefreshTokenKey = 'REFRESH_TOKEN'
@@ -24,7 +24,7 @@ const user = {
     // 更新令牌
     SET_TOKEN(state, data) {
       // 设置令牌
-      const { accessToken, refreshToken } = data
+      const {accessToken, refreshToken} = data
       state.accessToken = accessToken
       state.refreshToken = refreshToken
       uni.setStorageSync(AccessTokenKey, accessToken)
@@ -48,7 +48,7 @@ const user = {
   },
   actions: {
     //账号登录
-    Login({ state, commit }, { type, data }) {
+    Login({state, commit}, {type, data}) {
       if (type === 0) {
         return passwordLogin(data)
           .then(res => {
@@ -79,7 +79,7 @@ const user = {
       }
     },
     // 退出登录
-    Logout({ state, commit }) {
+    Logout({state, commit}) {
       return logout()
         .then(res => {
           return Promise.resolve(res)
@@ -92,7 +92,7 @@ const user = {
         })
     },
     // 获得用户基本信息
-    async ObtainUserInfo({ state, commit }) {
+    async ObtainUserInfo({state, commit}) {
       const res = await getUserInfo()
       commit('SET_USER_INFO', res.data)
     }

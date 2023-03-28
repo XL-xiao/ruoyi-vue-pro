@@ -104,8 +104,8 @@ public class PostServiceImplTest extends BaseDbUnitTest {
         postMapper.insert(postDO);// @Sql: 先插入出一条存在的数据
         // 准备参数
         PostCreateReqVO reqVO = randomPojo(PostCreateReqVO.class,
-            // 模拟 name 重复
-            o -> o.setName(postDO.getName()));
+                // 模拟 name 重复
+                o -> o.setName(postDO.getName()));
         assertServiceException(() -> postService.createPost(reqVO), POST_NAME_DUPLICATE);
     }
 

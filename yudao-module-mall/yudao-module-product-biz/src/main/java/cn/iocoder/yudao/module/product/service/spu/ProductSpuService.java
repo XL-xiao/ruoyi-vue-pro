@@ -86,7 +86,7 @@ public interface ProductSpuService {
      * 获得商品 SPU 分页
      *
      * @param pageReqVO 分页查询
-     * @param status 状态
+     * @param status    状态
      * @return 商品 SPU 分页
      */
     PageResult<ProductSpuDO> getSpuPage(AppProductSpuPageReqVO pageReqVO, Integer status);

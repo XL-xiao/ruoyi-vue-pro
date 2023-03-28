@@ -41,7 +41,7 @@ import static cn.hutool.core.text.CharSequenceUtil.*;
 /**
  * 代码生成的引擎，用于具体生成代码
  * 目前基于 {@link org.apache.velocity.app.Velocity} 模板引擎实现
- *
+ * <p>
  * 考虑到 Java 模板引擎的框架非常多，Freemarker、Velocity、Thymeleaf 等等，所以我们采用 hutool 封装的 {@link cn.hutool.extra.template.Template} 抽象
  *
  * @author 芋道源码
@@ -237,6 +237,7 @@ public class CodegenEngine {
         return "yudao-ui-${sceneEnum.basePackage}/" + // 顶级目录
                 "src/" + path;
     }
+
     private static String vue3TemplatePath(String path) {
         return "codegen/vue3/" + path + ".vm";
     }

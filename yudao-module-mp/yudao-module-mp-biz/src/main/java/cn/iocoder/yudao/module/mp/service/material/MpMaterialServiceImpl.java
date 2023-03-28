@@ -106,7 +106,7 @@ public class MpMaterialServiceImpl implements MpMaterialService {
         // 第二步，存储到数据库
         MpAccountDO account = mpAccountService.getRequiredAccount(reqVO.getAccountId());
         MpMaterialDO material = MpMaterialConvert.INSTANCE.convert(mediaId, reqVO.getType(), url, account,
-                        reqVO.getFile().getName()).setPermanent(false);
+                reqVO.getFile().getName()).setPermanent(false);
         mpMaterialMapper.insert(material);
         return material;
     }
@@ -139,7 +139,7 @@ public class MpMaterialServiceImpl implements MpMaterialService {
         // 第二步，存储到数据库
         MpAccountDO account = mpAccountService.getRequiredAccount(reqVO.getAccountId());
         MpMaterialDO material = MpMaterialConvert.INSTANCE.convert(mediaId, reqVO.getType(), url, account,
-                        name, reqVO.getTitle(), reqVO.getIntroduction(), result.getUrl()).setPermanent(true);
+                name, reqVO.getTitle(), reqVO.getIntroduction(), result.getUrl()).setPermanent(true);
         mpMaterialMapper.insert(material);
         return material;
     }
@@ -194,11 +194,11 @@ public class MpMaterialServiceImpl implements MpMaterialService {
 
     /**
      * 下载微信媒体文件的内容，并上传到文件服务
-     *
+     * <p>
      * 为什么要下载？媒体文件在微信后台保存时间为 3 天，即 3 天后 media_id 失效。
      *
      * @param accountId 公众号账号的编号
-     * @param mediaId 媒体文件编号
+     * @param mediaId   媒体文件编号
      * @return 上传后的 URL
      */
     public String downloadMedia(Long accountId, String mediaId) {

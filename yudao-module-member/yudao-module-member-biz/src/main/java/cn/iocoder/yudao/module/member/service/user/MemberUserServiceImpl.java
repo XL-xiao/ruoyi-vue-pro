@@ -103,7 +103,7 @@ public class MemberUserServiceImpl implements MemberUserService {
     public void updateUserNickname(Long userId, String nickname) {
         MemberUserDO user = this.checkUserExists(userId);
         // 仅当新昵称不等于旧昵称时进行修改
-        if (nickname.equals(user.getNickname())){
+        if (nickname.equals(user.getNickname())) {
             return;
         }
         MemberUserDO userDO = new MemberUserDO();

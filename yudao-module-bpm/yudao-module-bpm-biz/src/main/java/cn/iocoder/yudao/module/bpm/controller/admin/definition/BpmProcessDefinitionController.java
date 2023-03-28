@@ -40,7 +40,7 @@ public class BpmProcessDefinitionController {
         return success(bpmDefinitionService.getProcessDefinitionPage(pageReqVO));
     }
 
-    @GetMapping ("/list")
+    @GetMapping("/list")
     @Operation(summary = "获得流程定义列表")
     @PreAuthorize("@ss.hasPermission('bpm:process-definition:query')")
     public CommonResult<List<BpmProcessDefinitionRespVO>> getProcessDefinitionList(
@@ -48,7 +48,7 @@ public class BpmProcessDefinitionController {
         return success(bpmDefinitionService.getProcessDefinitionList(listReqVO));
     }
 
-    @GetMapping ("/get-bpmn-xml")
+    @GetMapping("/get-bpmn-xml")
     @Operation(summary = "获得流程定义的 BPMN XML")
     @Parameter(name = "id", description = "编号", required = true, example = "1024")
     @PreAuthorize("@ss.hasPermission('bpm:process-definition:query')")

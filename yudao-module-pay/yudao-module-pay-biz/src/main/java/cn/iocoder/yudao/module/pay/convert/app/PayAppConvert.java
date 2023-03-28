@@ -20,7 +20,7 @@ public interface PayAppConvert {
 
     PayAppConvert INSTANCE = Mappers.getMapper(PayAppConvert.class);
 
-    PayAppPageItemRespVO pageConvert (PayAppDO bean);
+    PayAppPageItemRespVO pageConvert(PayAppDO bean);
 
     PayAppPageItemRespVO.PayMerchant convert(PayMerchantDO bean);
 

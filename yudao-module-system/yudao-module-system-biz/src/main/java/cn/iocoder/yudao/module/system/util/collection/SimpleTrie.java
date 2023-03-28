@@ -91,7 +91,7 @@ public class SimpleTrie {
 
     /**
      * 获得文本所包含的不合法的敏感词
-     *
+     * <p>
      * 注意，才当即最短匹配原则。例如说：当敏感词存在 “煞笔”，“煞笔二货 ”时，只会返回 “煞笔”。
      *
      * @param text 文本
@@ -116,7 +116,7 @@ public class SimpleTrie {
 
     /**
      * 返回文本从 index 开始的敏感词，并使用 StringBuilder 参数进行返回
-     *
+     * <p>
      * 逻辑和 {@link #recursion(String, int, Map)} 是一致，只是多了 result 返回结果
      *
      * @param text   文本

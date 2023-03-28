@@ -2,6 +2,7 @@ package cn.iocoder.yudao.module.system.controller.admin.notify.vo.message;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
+
 import java.util.*;
 
 @Schema(description = "管理后台 - 站内信 Response VO")

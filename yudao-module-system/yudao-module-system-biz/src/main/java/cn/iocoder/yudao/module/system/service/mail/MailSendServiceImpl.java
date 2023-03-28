@@ -104,11 +104,11 @@ public class MailSendServiceImpl implements MailSendService {
     public void doSendMail(MailSendMessage message) {
         // 1. 创建发送账号
         MailAccountDO account = validateMailAccount(message.getAccountId());
-        MailAccount mailAccount  = MailAccountConvert.INSTANCE.convert(account, message.getNickname());
+        MailAccount mailAccount = MailAccountConvert.INSTANCE.convert(account, message.getNickname());
         // 2. 发送邮件
         try {
             String messageId = MailUtil.send(mailAccount, message.getMail(),
-                    message.getTitle(), message.getContent(),true);
+                    message.getTitle(), message.getContent(), true);
             // 3. 更新结果（成功）
             mailLogService.updateMailSendResult(message.getLogId(), messageId, null);
         } catch (Exception e) {
@@ -150,7 +150,7 @@ public class MailSendServiceImpl implements MailSendService {
     /**
      * 校验邮件参数是否确实
      *
-     * @param template 邮箱模板
+     * @param template       邮箱模板
      * @param templateParams 参数列表
      */
     @VisibleForTesting

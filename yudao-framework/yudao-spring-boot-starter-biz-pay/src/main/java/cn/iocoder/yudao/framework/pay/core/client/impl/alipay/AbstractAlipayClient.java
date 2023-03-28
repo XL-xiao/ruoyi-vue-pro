@@ -27,7 +27,7 @@ import static cn.iocoder.yudao.framework.common.util.json.JsonUtils.toJsonString
 /**
  * 支付宝抽象类， 实现支付宝统一的接口。如退款
  *
- * @author  jason
+ * @author jason
  */
 @Slf4j
 public abstract class AbstractAlipayClient extends AbstractPayClient<AlipayPayClientConfig> {
@@ -48,12 +48,13 @@ public abstract class AbstractAlipayClient extends AbstractPayClient<AlipayPayCl
 
     /**
      * 支付宝统一的退款接口 alipay.trade.refund
+     *
      * @param reqDTO 退款请求 request DTO
      * @return 退款请求 Response
      */
     @Override
-    protected PayRefundUnifiedRespDTO doUnifiedRefund(PayRefundUnifiedReqDTO reqDTO)  {
-        AlipayTradeRefundModel model=new AlipayTradeRefundModel();
+    protected PayRefundUnifiedRespDTO doUnifiedRefund(PayRefundUnifiedReqDTO reqDTO) {
+        AlipayTradeRefundModel model = new AlipayTradeRefundModel();
         model.setTradeNo(reqDTO.getChannelOrderNo());
         model.setOutTradeNo(reqDTO.getPayTradeNo());
 
@@ -66,7 +67,7 @@ public abstract class AbstractAlipayClient extends AbstractPayClient<AlipayPayCl
         refundRequest.setNotifyUrl(reqDTO.getNotifyUrl());
         refundRequest.setReturnUrl(reqDTO.getNotifyUrl());
         try {
-            AlipayTradeRefundResponse response =  client.execute(refundRequest);
+            AlipayTradeRefundResponse response = client.execute(refundRequest);
             log.info("[doUnifiedRefund][response({}) 发起退款 渠道返回", toJsonString(response));
             if (response.isSuccess()) {
                 //退款导致触发的异步通知是发送到支付接口中设置的notify_url

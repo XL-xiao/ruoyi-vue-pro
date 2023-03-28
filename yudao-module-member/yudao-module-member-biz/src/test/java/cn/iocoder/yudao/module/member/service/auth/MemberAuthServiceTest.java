@@ -30,6 +30,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
 // TODO @芋艿：单测的 review，等逻辑都达成一致后
+
 /**
  * {@link MemberAuthService} 的单元测试类
  *
@@ -62,7 +63,7 @@ public class MemberAuthServiceTest extends BaseDbAndRedisUnitTest {
     private MemberUserMapper memberUserMapper;
 
     @Test
-    public void testUpdatePassword_success(){
+    public void testUpdatePassword_success() {
         // 准备参数
         MemberUserDO userDO = randomUserDO();
         memberUserMapper.insert(userDO);
@@ -78,16 +79,16 @@ public class MemberAuthServiceTest extends BaseDbAndRedisUnitTest {
 
         // 测试桩
         // 这两个相等是为了返回ture这个结果
-        when(passwordEncoder.matches(reqVO.getOldPassword(),reqVO.getOldPassword())).thenReturn(true);
+        when(passwordEncoder.matches(reqVO.getOldPassword(), reqVO.getOldPassword())).thenReturn(true);
         when(passwordEncoder.encode(newPassword)).thenReturn(newPassword);
 
         // 更新用户密码
         authService.updatePassword(userDO.getId(), reqVO);
-        assertEquals(memberUserMapper.selectById(userDO.getId()).getPassword(),newPassword);
+        assertEquals(memberUserMapper.selectById(userDO.getId()).getPassword(), newPassword);
     }
 
     @Test
-    public void testResetPassword_success(){
+    public void testResetPassword_success() {
         // 准备参数
         MemberUserDO userDO = randomUserDO();
         memberUserMapper.insert(userDO);
@@ -107,7 +108,7 @@ public class MemberAuthServiceTest extends BaseDbAndRedisUnitTest {
         reqVO.setCode(code);
 
         authService.resetPassword(reqVO);
-        assertEquals(memberUserMapper.selectById(userDO.getId()).getPassword(),password);
+        assertEquals(memberUserMapper.selectById(userDO.getId()).getPassword(), password);
     }
 
 

@@ -36,7 +36,7 @@ export function handleTree(data, id, parentId, children, rootId) {
  * @param {*} data 树形结构
  */
 export function convertTree(data) {
-   //对源数据深度克隆
+  //对源数据深度克隆
   const cloneData = JSON.parse(JSON.stringify(data))
   // 遍历克隆数据，对源数据进行删除操作
   for (let first = 0; first < cloneData.length; first++) {

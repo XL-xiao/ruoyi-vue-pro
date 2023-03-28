@@ -28,7 +28,7 @@ public interface TradeAfterSaleService {
      * <p>
      * 一般是用户发起售后请求
      *
-     * @param userId 会员用户编号
+     * @param userId      会员用户编号
      * @param createReqVO 创建 Request 信息
      * @return 交易售后编号
      */
@@ -38,14 +38,14 @@ public interface TradeAfterSaleService {
      * 【管理员】同意交易售后
      *
      * @param userId 管理员用户编号
-     * @param id 交易售后编号
+     * @param id     交易售后编号
      */
     void agreeAfterSale(Long userId, Long id);
 
     /**
      * 【管理员】拒绝交易售后
      *
-     * @param userId 管理员用户编号
+     * @param userId     管理员用户编号
      * @param auditReqVO 审批 Request 信息
      */
     void disagreeAfterSale(Long userId, TradeAfterSaleDisagreeReqVO auditReqVO);
@@ -53,7 +53,7 @@ public interface TradeAfterSaleService {
     /**
      * 【会员】退回货物
      *
-     * @param userId 会员用户编号
+     * @param userId        会员用户编号
      * @param deliveryReqVO 退货 Request 信息
      */
     void deliveryAfterSale(Long userId, AppTradeAfterSaleDeliveryReqVO deliveryReqVO);
@@ -62,14 +62,14 @@ public interface TradeAfterSaleService {
      * 【管理员】确认收货
      *
      * @param userId 管理员编号
-     * @param id 交易售后编号
+     * @param id     交易售后编号
      */
     void receiveAfterSale(Long userId, Long id);
 
     /**
      * 【管理员】拒绝收货
      *
-     * @param userId 管理员用户编号
+     * @param userId      管理员用户编号
      * @param refuseReqVO 拒绝收货 Request 信息
      */
     void refuseAfterSale(Long userId, TradeAfterSaleRefuseReqVO refuseReqVO);
@@ -79,7 +79,7 @@ public interface TradeAfterSaleService {
      *
      * @param userId 管理员用户编号
      * @param userIp 管理员用户 IP
-     * @param id 售后编号
+     * @param id     售后编号
      */
     void refundAfterSale(Long userId, String userIp, Long id);
 
@@ -87,7 +87,7 @@ public interface TradeAfterSaleService {
      * 【会员】取消售后
      *
      * @param userId 会员用户编号
-     * @param id 交易售后编号
+     * @param id     交易售后编号
      */
     void cancelAfterSale(Long userId, Long id);
 

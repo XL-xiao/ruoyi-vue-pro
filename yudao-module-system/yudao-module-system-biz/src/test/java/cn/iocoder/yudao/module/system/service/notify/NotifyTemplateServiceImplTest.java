@@ -28,10 +28,10 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.verify;
 
 /**
-* {@link NotifyTemplateServiceImpl} 的单元测试类
-*
-* @author 芋道源码
-*/
+ * {@link NotifyTemplateServiceImpl} 的单元测试类
+ *
+ * @author 芋道源码
+ */
 @Import(NotifyTemplateServiceImpl.class)
 public class NotifyTemplateServiceImplTest extends BaseDbUnitTest {
 
@@ -98,9 +98,9 @@ public class NotifyTemplateServiceImplTest extends BaseDbUnitTest {
 
         // 调用
         notifyTemplateService.deleteNotifyTemplate(id);
-       // 校验数据不存在了
-       assertNull(notifyTemplateMapper.selectById(id));
-       verify(notifyProducer).sendNotifyTemplateRefreshMessage();
+        // 校验数据不存在了
+        assertNull(notifyTemplateMapper.selectById(id));
+        verify(notifyProducer).sendNotifyTemplateRefreshMessage();
     }
 
     @Test
@@ -114,35 +114,35 @@ public class NotifyTemplateServiceImplTest extends BaseDbUnitTest {
 
     @Test
     public void testGetNotifyTemplatePage() {
-       // mock 数据
-       NotifyTemplateDO dbNotifyTemplate = randomPojo(NotifyTemplateDO.class, o -> { // 等会查询到
-           o.setName("芋头");
-           o.setCode("test_01");
-           o.setStatus(CommonStatusEnum.ENABLE.getStatus());
-           o.setCreateTime(buildTime(2022, 2, 3));
-       });
-       notifyTemplateMapper.insert(dbNotifyTemplate);
-       // 测试 name 不匹配
-       notifyTemplateMapper.insert(cloneIgnoreId(dbNotifyTemplate, o -> o.setName("投")));
-       // 测试 code 不匹配
-       notifyTemplateMapper.insert(cloneIgnoreId(dbNotifyTemplate, o -> o.setCode("test_02")));
-       // 测试 status 不匹配
-       notifyTemplateMapper.insert(cloneIgnoreId(dbNotifyTemplate, o -> o.setStatus(CommonStatusEnum.DISABLE.getStatus())));
-       // 测试 createTime 不匹配
-       notifyTemplateMapper.insert(cloneIgnoreId(dbNotifyTemplate, o -> o.setCreateTime(buildTime(2022, 1, 5))));
-       // 准备参数
-       NotifyTemplatePageReqVO reqVO = new NotifyTemplatePageReqVO();
-       reqVO.setName("芋");
-       reqVO.setCode("est_01");
-       reqVO.setStatus(CommonStatusEnum.ENABLE.getStatus());
-       reqVO.setCreateTime(buildBetweenTime(2022, 2, 1, 2022, 2, 5));
+        // mock 数据
+        NotifyTemplateDO dbNotifyTemplate = randomPojo(NotifyTemplateDO.class, o -> { // 等会查询到
+            o.setName("芋头");
+            o.setCode("test_01");
+            o.setStatus(CommonStatusEnum.ENABLE.getStatus());
+            o.setCreateTime(buildTime(2022, 2, 3));
+        });
+        notifyTemplateMapper.insert(dbNotifyTemplate);
+        // 测试 name 不匹配
+        notifyTemplateMapper.insert(cloneIgnoreId(dbNotifyTemplate, o -> o.setName("投")));
+        // 测试 code 不匹配
+        notifyTemplateMapper.insert(cloneIgnoreId(dbNotifyTemplate, o -> o.setCode("test_02")));
+        // 测试 status 不匹配
+        notifyTemplateMapper.insert(cloneIgnoreId(dbNotifyTemplate, o -> o.setStatus(CommonStatusEnum.DISABLE.getStatus())));
+        // 测试 createTime 不匹配
+        notifyTemplateMapper.insert(cloneIgnoreId(dbNotifyTemplate, o -> o.setCreateTime(buildTime(2022, 1, 5))));
+        // 准备参数
+        NotifyTemplatePageReqVO reqVO = new NotifyTemplatePageReqVO();
+        reqVO.setName("芋");
+        reqVO.setCode("est_01");
+        reqVO.setStatus(CommonStatusEnum.ENABLE.getStatus());
+        reqVO.setCreateTime(buildBetweenTime(2022, 2, 1, 2022, 2, 5));
 
-       // 调用
-       PageResult<NotifyTemplateDO> pageResult = notifyTemplateService.getNotifyTemplatePage(reqVO);
-       // 断言
-       assertEquals(1, pageResult.getTotal());
-       assertEquals(1, pageResult.getList().size());
-       assertPojoEquals(dbNotifyTemplate, pageResult.getList().get(0));
+        // 调用
+        PageResult<NotifyTemplateDO> pageResult = notifyTemplateService.getNotifyTemplatePage(reqVO);
+        // 断言
+        assertEquals(1, pageResult.getTotal());
+        assertEquals(1, pageResult.getList().size());
+        assertPojoEquals(dbNotifyTemplate, pageResult.getList().get(0));
     }
 
     @Test
@@ -173,7 +173,7 @@ public class NotifyTemplateServiceImplTest extends BaseDbUnitTest {
         // 断言
         assertPojoEquals(dbNotifyTemplate, notifyTemplate);
     }
-    
+
     @Test
     public void testFormatNotifyTemplateContent() {
         // 准备参数

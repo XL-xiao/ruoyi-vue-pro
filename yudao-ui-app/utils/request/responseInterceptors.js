@@ -1,5 +1,4 @@
 import errorCode from '@/utils/request/errorCode'
-import { refreshToken } from '@/api/auth'
 
 // 需要忽略的提示。忽略后，自动 Promise.reject('error')
 const ignoreMsgs = [
@@ -37,7 +36,7 @@ module.exports = vm => {
           // 2. 进行刷新访问令牌
           try {
             let param = {}
-            let refreshToken =  uni.getStorageSync('REFRESH_TOKEN');
+            let refreshToken = uni.getStorageSync('REFRESH_TOKEN');
             param.refreshToken = refreshToken;
             const refreshTokenRes = await refreshToken(param)
             // 2.1 刷新成功，则回放队列的请求 + 当前请求
@@ -84,10 +83,10 @@ module.exports = vm => {
     },
     err => {
       console.log(err)
-      let { message } = err
+      let {message} = err
       if (!message) {
         message = '系统发生未知错误'
-      }else if (message === 'Network Error') {
+      } else if (message === 'Network Error') {
         message = '后端接口连接异常'
       } else if (message.includes('timeout')) {
         message = '系统接口请求超时'

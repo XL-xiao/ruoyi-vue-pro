@@ -34,7 +34,7 @@ public interface MpTagService {
     /**
      * 删除公众号标签
      *
-     * @param id    编号
+     * @param id 编号
      */
     void deleteTag(Long id);
 

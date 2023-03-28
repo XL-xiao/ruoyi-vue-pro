@@ -17,7 +17,7 @@ import java.util.Objects;
 
 /**
  * 支付宝【PC 网站】的 PayClient 实现类
- *
+ * <p>
  * 文档：<a href="https://opendocs.alipay.com/open/270/105898">电脑网站支付</a>
  *
  * @author XGD
@@ -71,7 +71,7 @@ public class AlipayPcPayClient extends AbstractAlipayClient {
      * 获得最终的支付 UI 展示模式
      *
      * @param displayMode 前端传递的 UI 展示模式
-     * @param qrPayMode 前端传递的二维码模式
+     * @param qrPayMode   前端传递的二维码模式
      * @return 最终的支付 UI 展示模式
      */
     private String getDisplayMode(String displayMode, String qrPayMode) {

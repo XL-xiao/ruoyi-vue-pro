@@ -42,7 +42,7 @@ public class PayMerchantDO extends BaseDO {
     private String shortName;
     /**
      * 状态
-     *
+     * <p>
      * 枚举 {@link CommonStatusEnum}
      */
     private Integer status;

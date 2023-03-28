@@ -1,11 +1,13 @@
 type AnyObject = Record<string | number | symbol, any>
 type HttpPromise<T> = Promise<HttpResponse<T>>;
 type Tasks = UniApp.RequestTask | UniApp.UploadTask | UniApp.DownloadTask
+
 export interface RequestTask {
   abort: () => void;
   offHeadersReceived: () => void;
   onHeadersReceived: () => void;
 }
+
 export interface HttpRequestConfig<T = Tasks> {
   /** 请求基地址 */
   baseURL?: string;
@@ -56,6 +58,7 @@ export interface HttpRequestConfig<T = Tasks> {
   /**  全局自定义验证器 */
   validateStatus?: (statusCode: number) => boolean | void;
 }
+
 export interface HttpResponse<T = any> {
   config: HttpRequestConfig;
   statusCode: number;
@@ -64,15 +67,18 @@ export interface HttpResponse<T = any> {
   errMsg: string;
   header: AnyObject;
 }
+
 export interface HttpUploadResponse<T = any> {
   config: HttpRequestConfig;
   statusCode: number;
   data: T;
   errMsg: string;
 }
+
 export interface HttpDownloadResponse extends HttpResponse {
   tempFilePath: string;
 }
+
 export interface HttpError {
   config: HttpRequestConfig;
   statusCode?: number;
@@ -81,30 +87,45 @@ export interface HttpError {
   errMsg: string;
   header?: AnyObject;
 }
+
 export interface HttpInterceptorManager<V, E = V> {
   use(
     onFulfilled?: (config: V) => Promise<V> | V,
     onRejected?: (config: E) => Promise<E> | E
   ): void;
+
   eject(id: number): void;
 }
+
 export abstract class HttpRequestAbstract {
   constructor(config?: HttpRequestConfig);
+
   config: HttpRequestConfig;
   interceptors: {
     request: HttpInterceptorManager<HttpRequestConfig, HttpRequestConfig>;
     response: HttpInterceptorManager<HttpResponse, HttpError>;
   }
+
   middleware<T = any>(config: HttpRequestConfig): HttpPromise<T>;
+
   request<T = any>(config: HttpRequestConfig<UniApp.RequestTask>): HttpPromise<T>;
+
   get<T = any>(url: string, config?: HttpRequestConfig<UniApp.RequestTask>): HttpPromise<T>;
+
   upload<T = any>(url: string, config?: HttpRequestConfig<UniApp.UploadTask>): HttpPromise<T>;
+
   delete<T = any>(url: string, data?: AnyObject, config?: HttpRequestConfig<UniApp.RequestTask>): HttpPromise<T>;
+
   head<T = any>(url: string, data?: AnyObject, config?: HttpRequestConfig<UniApp.RequestTask>): HttpPromise<T>;
+
   post<T = any>(url: string, data?: AnyObject, config?: HttpRequestConfig<UniApp.RequestTask>): HttpPromise<T>;
+
   put<T = any>(url: string, data?: AnyObject, config?: HttpRequestConfig<UniApp.RequestTask>): HttpPromise<T>;
+
   connect<T = any>(url: string, data?: AnyObject, config?: HttpRequestConfig<UniApp.RequestTask>): HttpPromise<T>;
+
   options<T = any>(url: string, data?: AnyObject, config?: HttpRequestConfig<UniApp.RequestTask>): HttpPromise<T>;
+
   trace<T = any>(url: string, data?: AnyObject, config?: HttpRequestConfig<UniApp.RequestTask>): HttpPromise<T>;
 
   download(url: string, config?: HttpRequestConfig<UniApp.DownloadTask>): Promise<HttpDownloadResponse>;
@@ -112,5 +133,7 @@ export abstract class HttpRequestAbstract {
   setConfig(onSend: (config: HttpRequestConfig) => HttpRequestConfig): void;
 }
 
-declare class HttpRequest extends HttpRequestAbstract { }
+declare class HttpRequest extends HttpRequestAbstract {
+}
+
 export default HttpRequest;

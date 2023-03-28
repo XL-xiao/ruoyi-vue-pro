@@ -123,7 +123,6 @@ public class WXNativePayClient extends AbstractPayClient<WXPayClientConfig> {
     }
 
     /**
-     *
      * 微信支付回调 分v2 和v3 的处理方式
      *
      * @param data 通知结果
@@ -173,7 +172,7 @@ public class WXNativePayClient extends AbstractPayClient<WXPayClientConfig> {
     }
 
     @Override
-    protected PayRefundUnifiedRespDTO doUnifiedRefund(PayRefundUnifiedReqDTO reqDTO)  {
+    protected PayRefundUnifiedRespDTO doUnifiedRefund(PayRefundUnifiedReqDTO reqDTO) {
         // TODO 需要实现
         throw new UnsupportedOperationException();
     }

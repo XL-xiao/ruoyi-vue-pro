@@ -191,7 +191,7 @@ public class ProductSpuServiceImplTest extends BaseDbUnitTest {
         String code = generateNo();
 
         // 准备参数
-        ProductSpuDO createReqVO = randomPojo(ProductSpuDO.class, o->{
+        ProductSpuDO createReqVO = randomPojo(ProductSpuDO.class, o -> {
             o.setStatus(ProductSpuStatusEnum.ENABLE.getStatus());
             o.setTotalStock(500);
             o.setMinPrice(1);
@@ -239,7 +239,7 @@ public class ProductSpuServiceImplTest extends BaseDbUnitTest {
         Long categoryId = generateId();
 
         // 准备参数
-        ProductSpuDO createReqVO = randomPojo(ProductSpuDO.class, o->{
+        ProductSpuDO createReqVO = randomPojo(ProductSpuDO.class, o -> {
             o.setStatus(ProductSpuStatusEnum.ENABLE.getStatus());
             o.setTotalStock(1);
             o.setMinPrice(1);

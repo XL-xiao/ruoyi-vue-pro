@@ -8,7 +8,7 @@ import lombok.*;
 
 /**
  * GoView 项目表
- *
+ * <p>
  * 每个大屏图标，对应一个项目
  *
  * @author 芋道源码
@@ -37,16 +37,16 @@ public class GoViewProjectDO extends BaseDO {
     private String picUrl;
     /**
      * 报表内容
-     *
+     * <p>
      * JSON 配置，使用字符串存储
      */
     private String content;
     /**
      * 发布状态
-     *
+     * <p>
      * 0 - 已发布
      * 1 - 未发布
-     *
+     * <p>
      * 枚举 {@link cn.iocoder.yudao.framework.common.enums.CommonStatusEnum}
      */
     private Integer status;

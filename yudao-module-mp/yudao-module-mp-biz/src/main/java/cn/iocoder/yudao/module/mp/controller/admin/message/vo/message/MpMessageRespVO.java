@@ -77,7 +77,7 @@ public class MpMessageRespVO {
 
     /**
      * 图文消息数组
-     *
+     * <p>
      * 消息类型为 {@link WxConsts.XmlMsgType} 的 NEWS
      */
     @TableField(typeHandler = MpMessageDO.ArticleTypeHandler.class)

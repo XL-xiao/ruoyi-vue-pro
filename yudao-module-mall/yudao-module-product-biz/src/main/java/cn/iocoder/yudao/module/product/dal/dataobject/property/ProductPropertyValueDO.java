@@ -29,7 +29,7 @@ public class ProductPropertyValueDO extends BaseDO {
     private Long id;
     /**
      * 属性项的编号
-     *
+     * <p>
      * 关联 {@link ProductPropertyDO#getId()}
      */
     private Long propertyId;
@@ -39,7 +39,6 @@ public class ProductPropertyValueDO extends BaseDO {
     private String name;
     /**
      * 备注
-     *
      */
     private String remark;
 
